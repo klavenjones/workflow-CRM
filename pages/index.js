@@ -7,6 +7,7 @@ import {
   CTA,
   Stats,
   Footer,
+  SideNav,
 } from '../components'
 
 export default function Home() {

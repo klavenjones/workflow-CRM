@@ -11,22 +11,6 @@ export default function Hero() {
 
   return (
     <>
-      {/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-// ...
-require('@tailwindcss/forms'),
-    ]
-  }
-  ```
-*/}
       <div className='relative bg-gray-800 overflow-hidden'>
         <div
           className='hidden sm:block sm:absolute sm:inset-0'
@@ -300,18 +284,15 @@ require('@tailwindcss/forms'),
                             />
                           </div>
                           <div>
-                            <label
-                              htmlFor='mobile-or-email'
-                              className='sr-only'
-                            >
-                              Mobile number or email
+                            <label htmlFor='email' className='sr-only'>
+                              Email Address
                             </label>
                             <input
                               type='text'
-                              name='mobile-or-email'
-                              id='mobile-or-email'
+                              name='email'
+                              id='email'
                               autoComplete='email'
-                              placeholder='Mobile number or email'
+                              placeholder='Email Address'
                               required
                               className='block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md'
                             />
