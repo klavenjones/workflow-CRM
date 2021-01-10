@@ -54,7 +54,7 @@ export default function Hero() {
                   <img
                     className='h-8 w-auto sm:h-10'
                     src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
-                    alt="Logo"
+                    alt='Logo'
                   />
                 </a>
                 <div className='-mr-2 flex items-center md:hidden'>
@@ -118,14 +118,14 @@ export default function Hero() {
                 <div className='px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center'>
                   <div>
                     <a
-                      href='#'
+                      href='/register'
                       className='inline-flex items-center text-white bg-gray-900 rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200'
                     >
                       <span className='px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-500 rounded-full'>
-                        We're hiring
+                        Let's Work
                       </span>
                       <span className='ml-4 text-sm'>
-                        Visit our careers page
+                        Manage your business today.
                       </span>
                       {/* Heroicon name: chevron-right */}
                       <svg

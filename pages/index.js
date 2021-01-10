@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { useAuth } from '../context/auth'
 import {
   Layout,
   Hero,
@@ -11,14 +10,10 @@ import {
 } from '../components'
 
 export default function Home() {
+  const { user } = useAuth()
+  console.log("USER FIREBASE", user)
   return (
-    <Layout>
-      <>
-        <Head>
-          <title>Workflow CRM</title>
-          <link rel='icon' href='/favicon.ico' />
-        </Head>
-      </>
+    <Layout title='Workflow CRM'>
       <Hero />
       <Features />
       <CTA />
