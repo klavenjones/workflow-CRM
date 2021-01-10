@@ -54,7 +54,7 @@ export default function Hero() {
                   <img
                     className='h-8 w-auto sm:h-10'
                     src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
-                    alt
+                    alt="Logo"
                   />
                 </a>
                 <div className='-mr-2 flex items-center md:hidden'>

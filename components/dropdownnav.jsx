@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function DropDownNav({ show, toggle }) {
-  console.log(show)
   return (
     <>
       {/*
@@ -27,7 +26,7 @@ Leaving: "duration-100 ease-in"
               <img
                 className='h-8 w-auto'
                 src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
-                alt
+                alt='logo'
               />
             </div>
             <div className='-mr-2'>
