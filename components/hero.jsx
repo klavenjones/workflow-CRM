@@ -9,13 +9,11 @@ import 'firebase/auth'
 
 export default function Hero() {
   firebaseClient()
-
   const [visible, setVisible] = React.useState(false)
   const { register, handleSubmit, errors } = useForm()
   const { addToast } = useToasts()
 
   const toggleNav = () => {
-    console.log('PRESSED')
     setVisible(!visible)
   }
 
@@ -25,11 +23,12 @@ export default function Hero() {
       .auth()
       .signInWithPopup(github)
       .then((result) => {
+        console.log("FIRED HERO")
         window.location.href = '/dashboard'
       })
       .catch((error) => {
         // Handle Errors here.
-        console.log("ERROR HERO", error.message)
+        console.log('FIRED ERROR HERO')
         addToast(error.message, { appearance: 'error' })
       })
   }
@@ -40,6 +39,7 @@ export default function Hero() {
       .createUserWithEmailAndPassword(data.email, data.password)
       .then(() => {
         // Signed in
+        console.log("FIRED HERO SUBMIT")
         window.location.href = '/dashboard'
       })
       .catch((error) => {
@@ -312,6 +312,7 @@ export default function Hero() {
                         <form
                           onSubmit={handleSubmit(onSubmit)}
                           className='space-y-6'
+                          type='submit'
                         >
                           <div>
                             <label htmlFor='name' className='sr-only'>
@@ -457,3 +458,4 @@ export default function Hero() {
     </>
   )
 }
+

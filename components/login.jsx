@@ -20,7 +20,6 @@ export default function Login() {
       })
       .catch((error) => {
         // Handle Errors here
-
         addToast(error.message, { appearance: 'error' })
       })
   }
@@ -36,7 +35,10 @@ export default function Login() {
       .catch((error) => {
         var errorCode = error.code
         var errorMessage = error.message
-        addToast(error.message, { appearance: 'error' })
+        if (errorCode === 'auth/user-not-found') {
+          errorMessage = 'There is no such user in our system.'
+        }
+        addToast(errorMessage, { appearance: 'error' })
       })
   }
 

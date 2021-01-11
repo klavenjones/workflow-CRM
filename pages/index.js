@@ -1,4 +1,7 @@
 import { useAuth } from '../context/auth'
+import firebaseClient from '../util/firebase/firebaseClient'
+import firebase from 'firebase/app'
+
 import {
   Layout,
   Hero,
@@ -9,16 +12,32 @@ import {
   SideNav,
 } from '../components'
 
-export default function Home() {
+export default function Home({ session }) {
+  firebaseClient()
   const { user } = useAuth()
-  console.log("USER FIREBASE", user)
-  return (
-    <Layout title='Workflow CRM'>
-      <Hero />
-      <Features />
-      <CTA />
-      <Stats />
-      <Footer />
-    </Layout>
-  )
+  if (user) {
+    window.location.href = '/dashboard'
+  } else {
+    return (
+      <Layout title='Workflow CRM'>
+        <Hero />
+        <Features />
+        <CTA />
+        <Stats />
+        <Footer />
+      </Layout>
+    )
+  }
+}
+
+export async function getServerSideProps(context) {
+  try {
+    const cookies = nookies.get(context)
+    const token = await verifyIdToken(cookies.token)
+    return {
+      props: { session: true },
+    }
+  } catch (error) {
+    return { props: {} }
+  }
 }

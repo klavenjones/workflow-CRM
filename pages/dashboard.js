@@ -9,8 +9,8 @@ import firebase from 'firebase/app'
 
 function Dashboard({ session }) {
   firebaseClient()
+  console.log("FIRED DASHBOARD COMPONENT")
   if (session) {
-    console.log(session)
     return (
       <SideNav page='dashboard'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -22,6 +22,7 @@ function Dashboard({ session }) {
               className='inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
               onClick={async () => {
                 firebase.auth().signOut()
+                nookies.destroy(undefined, 'token')
                 window.location.href = '/'
               }}
             >
@@ -38,6 +39,7 @@ function Dashboard({ session }) {
 
 export async function getServerSideProps(context) {
   try {
+    console.log('FIRED DASHBOARD GET SERVER SIDE')
     const cookies = nookies.get(context)
     const token = await verifyIdToken(cookies.token)
     const { email } = token
@@ -45,7 +47,7 @@ export async function getServerSideProps(context) {
       props: { session: `Your email is ${email}` },
     }
   } catch (error) {
-    console.log(error)
+    console.log('ERROR DASHBOARD', error)
     context.res.writeHead(302, { location: '/login' })
     context.res.end()
 
