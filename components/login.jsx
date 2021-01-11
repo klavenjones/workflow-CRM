@@ -10,6 +10,21 @@ export default function Login() {
   const { register, handleSubmit, errors, clearErrors } = useForm()
   const { addToast } = useToasts()
 
+  const onGithubSignIn = () => {
+    let github = new firebase.auth.GithubAuthProvider()
+    firebase
+      .auth()
+      .signInWithPopup(github)
+      .then((result) => {
+        window.location.href = '/dashboard'
+      })
+      .catch((error) => {
+        // Handle Errors here
+
+        addToast(error.message, { appearance: 'error' })
+      })
+  }
+
   const onSubmit = (data) => {
     firebase
       .auth()
@@ -21,7 +36,6 @@ export default function Login() {
       .catch((error) => {
         var errorCode = error.code
         var errorMessage = error.message
-        console.log(error)
         addToast(error.message, { appearance: 'error' })
       })
   }
@@ -161,9 +175,10 @@ export default function Login() {
                 </a>
               </div>
               <div>
-                <a
+                <button
                   href='#'
                   className='w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+                  onClick={() => onGithubSignIn()}
                 >
                   <span className='sr-only'>Sign in with GitHub</span>
                   <svg
@@ -178,7 +193,7 @@ export default function Login() {
                       clipRule='evenodd'
                     />
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
           </div>

@@ -19,6 +19,21 @@ export default function Hero() {
     setVisible(!visible)
   }
 
+  const onGithubSignIn = () => {
+    let github = new firebase.auth.GithubAuthProvider()
+    firebase
+      .auth()
+      .signInWithPopup(github)
+      .then((result) => {
+        window.location.href = '/dashboard'
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        console.log("ERROR HERO", error.message)
+        addToast(error.message, { appearance: 'error' })
+      })
+  }
+
   const onSubmit = (data) => {
     firebase
       .auth()
@@ -256,9 +271,10 @@ export default function Hero() {
                             </a>
                           </div>
                           <div>
-                            <a
+                            <button
                               href='#'
                               className='w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
+                              onClick={() => onGithubSignIn()}
                             >
                               <span className='sr-only'>
                                 Sign in with GitHub
@@ -275,7 +291,7 @@ export default function Hero() {
                                   clipRule='evenodd'
                                 />
                               </svg>
-                            </a>
+                            </button>
                           </div>
                         </div>
                       </div>
