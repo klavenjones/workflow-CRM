@@ -1,19 +1,31 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useToasts } from 'react-toast-notifications'
 import firebaseClient from '../util/firebase/firebaseClient'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
 export default function Login() {
   firebaseClient()
-  const { register, handleSubmit, watch, errors, clearErrors } = useForm()
+  const { register, handleSubmit, errors, clearErrors } = useForm()
+  const { addToast } = useToasts()
+
   const onSubmit = (data) => {
-    console.log(data)
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(data.email, data.password)
+      .then(() => {
+        // Signed in
+        window.location.href = '/dashboard'
+      })
+      .catch((error) => {
+        var errorCode = error.code
+        var errorMessage = error.message
+        console.log(error)
+        addToast(error.message, { appearance: 'error' })
+      })
   }
-  console.log(watch('fullname'))
-  const handleRegister = (e) => {
-    e.preventDefault()
-  }
+
   return (
     <>
       <div className='mt-8 sm:mx-auto sm:w-full sm:max-w-md'>

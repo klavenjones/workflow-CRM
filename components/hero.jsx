@@ -1,12 +1,37 @@
 import React from 'react'
 import DropDownNav from './dropdownnav'
+import { useForm } from 'react-hook-form'
+import { useToasts } from 'react-toast-notifications'
+
+import firebaseClient from '../util/firebase/firebaseClient'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
 export default function Hero() {
+  firebaseClient()
+
   const [visible, setVisible] = React.useState(false)
+  const { register, handleSubmit, errors } = useForm()
+  const { addToast } = useToasts()
 
   const toggleNav = () => {
     console.log('PRESSED')
     setVisible(!visible)
+  }
+
+  const onSubmit = (data) => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(data.email, data.password)
+      .then(() => {
+        // Signed in
+        window.location.href = '/dashboard'
+      })
+      .catch((error) => {
+        var errorCode = error.code
+        var errorMessage = error.message
+        addToast(error.message, { appearance: 'error' })
+      })
   }
 
   return (
@@ -268,48 +293,106 @@ export default function Hero() {
                         </div>
                       </div>
                       <div className='mt-6'>
-                        <form action='#' method='POST' className='space-y-6'>
+                        <form
+                          onSubmit={handleSubmit(onSubmit)}
+                          className='space-y-6'
+                        >
                           <div>
                             <label htmlFor='name' className='sr-only'>
                               Full name
                             </label>
                             <input
-                              type='text'
-                              name='name'
-                              id='name'
-                              autoComplete='name'
-                              placeholder='Full name'
-                              required
-                              className='block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md'
+                              id='fullname'
+                              name='fullname'
+                              autoComplete='fullname'
+                              placeholder='John Doe'
+                              ref={register({ required: true })}
+                              className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
+                                errors.fullname
+                                  ? 'focus:ring-red-500 focus:border-red-500 border-red-300 text-red-900 placeholder-red-300'
+                                  : 'focus:ring-indigo-500 focus:border-indigo-500 border-gray-300'
+                              }`}
                             />
+                            {errors.fullname && (
+                              <p
+                                className='mt-2 text-sm text-red-600'
+                                id='email-error'
+                              >
+                                You must enter your full name.
+                              </p>
+                            )}
                           </div>
                           <div>
                             <label htmlFor='email' className='sr-only'>
                               Email Address
                             </label>
                             <input
-                              type='text'
-                              name='email'
                               id='email'
+                              name='email'
+                              type='email'
+                              ref={register({
+                                required: true,
+                                pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
+                              })}
                               autoComplete='email'
-                              placeholder='Email Address'
-                              required
-                              className='block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md'
+                              placeholder='johndoe@email.com'
+                              className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
+                                errors.email
+                                  ? 'focus:ring-red-500 focus:border-red-500 border-red-300 text-red-900 placeholder-red-300'
+                                  : 'focus:ring-indigo-500 focus:border-indigo-500 border-gray-300'
+                              }`}
                             />
+                            {errors.email?.type === 'required' && (
+                              <p
+                                className='mt-2 text-sm text-red-600'
+                                id='email-error'
+                              >
+                                You must enter your email address.
+                              </p>
+                            )}
+                            {errors.email?.type === 'pattern' && (
+                              <p
+                                className='mt-2 text-sm text-red-600'
+                                id='email-error'
+                              >
+                                This must be a valid email address.
+                              </p>
+                            )}
                           </div>
                           <div>
                             <label htmlFor='password' className='sr-only'>
                               Password
                             </label>
                             <input
+                              // onChange={(e) => setPassword(e.target.value)}
                               id='password'
                               name='password'
                               type='password'
-                              placeholder='Password'
+                              ref={register({ required: true, minLength: 6 })}
+                              placeholder='Enter your password'
                               autoComplete='current-password'
-                              required
-                              className='block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md'
+                              className={`appearance-none block w-full px-3 py-2 border rounded-md shadow-sm placeholder-gray-400 focus:outline-none sm:text-sm ${
+                                errors.email
+                                  ? 'focus:ring-red-500 focus:border-red-500 border-red-300 text-red-900 placeholder-red-300'
+                                  : 'focus:ring-indigo-500 focus:border-indigo-500 border-gray-300'
+                              }`}
                             />
+                            {errors.password?.type === 'required' && (
+                              <p
+                                className='mt-2 text-sm text-red-600'
+                                id='email-error'
+                              >
+                                You must a password.
+                              </p>
+                            )}
+                            {errors.password?.type === 'minLength' && (
+                              <p
+                                className='mt-2 text-sm text-red-600'
+                                id='email-error'
+                              >
+                                Your password must be atleast 6 characters.
+                              </p>
+                            )}
                           </div>
                           <div>
                             <button

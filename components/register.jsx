@@ -5,7 +5,7 @@ import firebaseClient from '../util/firebase/firebaseClient'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import { useToasts } from 'react-toast-notifications'
-import { Error } from './'
+
 
 export default function Register() {
   firebaseClient()
@@ -17,9 +17,9 @@ export default function Register() {
     firebase
       .auth()
       .createUserWithEmailAndPassword(data.email, data.password)
-      .then((user) => {
+      .then(() => {
         // Signed in
-        console.log(data.fullname)
+        window.location.href = '/dashboard'
       })
       .catch((error) => {
         var errorCode = error.code

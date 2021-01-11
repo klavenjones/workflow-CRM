@@ -20,7 +20,9 @@ export const AuthProvider = ({ children }) => {
       }
       const token = await user.getIdToken()
       setUser(user)
-      nookies.set(undefined, 'token', token, {})
+      nookies.set(undefined, 'token', token, {
+        maxAge: 30 * 24 * 60 * 60,
+      })
     })
   }, [])
 
