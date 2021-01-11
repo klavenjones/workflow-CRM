@@ -9,7 +9,7 @@ import firebase from 'firebase/app'
 
 function Dashboard({ session }) {
   firebaseClient()
-  console.log("FIRED DASHBOARD COMPONENT")
+
   if (session) {
     return (
       <SideNav page='dashboard'>
@@ -39,7 +39,7 @@ function Dashboard({ session }) {
 
 export async function getServerSideProps(context) {
   try {
-    console.log('FIRED DASHBOARD GET SERVER SIDE')
+
     const cookies = nookies.get(context)
     const token = await verifyIdToken(cookies.token)
     const { email } = token
@@ -47,7 +47,7 @@ export async function getServerSideProps(context) {
       props: { session: `Your email is ${email}` },
     }
   } catch (error) {
-    console.log('ERROR DASHBOARD', error)
+
     context.res.writeHead(302, { location: '/login' })
     context.res.end()
 
