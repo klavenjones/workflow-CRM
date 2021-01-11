@@ -9,6 +9,7 @@ import SideNav from './sidenavigation.jsx'
 import Login from './login.jsx'
 import Register from './register.jsx'
 import Footer from './footer.jsx'
+import { Success, Error } from './toast'
 
 export {
   Layout,
@@ -22,4 +23,6 @@ export {
   Login,
   Register,
   SideNav,
+  Success,
+  Error,
 }

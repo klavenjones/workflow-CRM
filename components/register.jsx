@@ -4,11 +4,14 @@ import { useForm } from 'react-hook-form'
 import firebaseClient from '../util/firebase/firebaseClient'
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import { useToasts } from 'react-toast-notifications'
+import { Error } from './'
 
 export default function Register() {
   firebaseClient()
 
   const { register, handleSubmit, errors } = useForm()
+  const { addToast } = useToasts()
 
   const onSubmit = (data) => {
     firebase
@@ -21,8 +24,7 @@ export default function Register() {
       .catch((error) => {
         var errorCode = error.code
         var errorMessage = error.message
-        // ..
-        console.log(error.message)
+        addToast(error.message, { appearance: 'error' })
       })
   }
 
