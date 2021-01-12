@@ -12,6 +12,20 @@ export default function Register() {
   const { register, handleSubmit, errors } = useForm()
   const { addToast } = useToasts()
 
+  const onGoogleSignIn = () => {
+    let google = new firebase.auth.GoogleAuthProvider()
+    firebase
+      .auth()
+      .signInWithPopup(google)
+      .then((result) => {
+        window.location.href = '/dashboard'
+      })
+      .catch((error) => {
+        // Handle Errors here.
+
+        addToast(error.message, { appearance: 'error' })
+      })
+  }
   const onGithubSignIn = () => {
     let github = new firebase.auth.GithubAuthProvider()
     firebase
@@ -166,24 +180,32 @@ export default function Register() {
             </div>
             <div className='mt-6 grid grid-cols-2 gap-3'>
               <div>
-                <a
-                  href='#'
+                <button
+                  onClick={() => onGoogleSignIn()}
                   className='w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50'
                 >
-                  <span className='sr-only'>Sign in with Facebook</span>
+                  <span className='sr-only'>Sign in with Google</span>
                   <svg
                     className='w-5 h-5'
                     fill='currentColor'
                     viewBox='0 0 20 20'
                     aria-hidden='true'
+                    viewBox='0 0 488 496'
+                    version='1.1'
+                    xmlns='http://www.w3.org/2000/svg'
+                    xmlnsXlink='http://www.w3.org/1999/xlink'
                   >
-                    <path
-                      fillRule='evenodd'
-                      d='M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z'
-                      clipRule='evenodd'
-                    />
+                    <title>google</title>
+                    <g fillRule='evenodd'>
+                      <g id='google' fillRule='nonzero'>
+                        <path
+                          d='M488,253.8 C488,395.3 391.1,496 248,496 C110.8,496 0,385.2 0,248 C0,110.8 110.8,0 248,0 C314.8,0 371,24.5 414.3,64.9 L346.8,129.8 C258.5,44.6 94.3,108.6 94.3,248 C94.3,334.5 163.4,404.6 248,404.6 C346.2,404.6 383,334.2 388.8,297.7 L248,297.7 L248,212.4 L484.1,212.4 C486.4,225.1 488,237.3 488,253.8 Z'
+                          id='Path'
+                        />
+                      </g>
+                    </g>
                   </svg>
-                </a>
+                </button>
               </div>
               <div>
                 <button
