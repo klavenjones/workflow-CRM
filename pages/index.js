@@ -1,6 +1,6 @@
 import { useAuth } from '../context/auth'
 import firebaseClient from '../util/firebase/firebaseClient'
-import firebase from 'firebase/app'
+
 
 import {
   Layout,

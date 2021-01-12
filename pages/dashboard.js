@@ -39,7 +39,6 @@ function Dashboard({ session }) {
 
 export async function getServerSideProps(context) {
   try {
-
     const cookies = nookies.get(context)
     const token = await verifyIdToken(cookies.token)
     const { email } = token
@@ -47,10 +46,8 @@ export async function getServerSideProps(context) {
       props: { session: `Your email is ${email}` },
     }
   } catch (error) {
-
     context.res.writeHead(302, { location: '/login' })
     context.res.end()
-
     return { props: {} }
   }
 }
