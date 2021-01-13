@@ -74,8 +74,8 @@ function Dashboard({ session }) {
             </dl>
           </section> */}
           {/* MAIN SECTION */}
-          <section className='grid grid-cols-1 gap-6 sm:gap-6 md:grid-cols-2 mt-6'>
-            <div className=''>
+          <section className='grid grid-cols-1 gap-6 sm:gap-6 md:grid-cols-3 mt-6'>
+            <div className='col-span-2'>
               {/* This example requires Tailwind CSS v2.0+ */}
               <div className='bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200 mb-6'>
                 {/* This example requires Tailwind CSS v2.0+ */}
