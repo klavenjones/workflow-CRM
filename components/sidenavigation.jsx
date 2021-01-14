@@ -12,10 +12,14 @@ export default function SideNav({ children, page, pageTitle }) {
       <div className='h-screen flex overflow-hidden bg-gray-100'>
         {/* Off-canvas menu for mobile, show/hide based on off-canvas menu state. */}
         <div className='md:hidden'>
-          <div className={`fixed inset-0 flex z-40`}>
+          <div
+            className={`fixed inset-0 flex transition-all delay-400 ease-linear duration-300 ${
+              show ? 'z-50' : 'z-0'
+            }`}
+          >
             <div className='fixed inset-0'>
               <div
-                className={`absolute inset-0 bg-gray-600 transition-opacity ease-linear duration-300 ${
+                className={`absolute inset-0 bg-gray-600 transition-opacity  ease-linear duration-300  ${
                   show ? 'opacity-100' : 'opacity-0'
                 }`}
               />
@@ -647,7 +651,7 @@ export default function SideNav({ children, page, pageTitle }) {
             </button>
           </div>
           <main
-            className='flex-1 relative z-0 overflow-y-auto focus:outline-none'
+            className={`flex-1 relative overflow-y-auto focus:outline-none z-0`}
             tabIndex={0}
           >
             <div className='py-6'>

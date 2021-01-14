@@ -15,7 +15,7 @@ function Dashboard({ session }) {
     return (
       <SideNav page='dashboard'>
         {/* PAGE HEADER */}
-        <div className='flex flex-col overflow-hidden'>
+        <div className='flex flex-col'>
           <div className='pb-5 border-b border-gray-200 sm:flex sm:items-center sm:justify-between'>
             <h3 className='text-2xl leading-6 font-xl text-gray-900'>
               Dashboard
@@ -50,15 +50,15 @@ function Dashboard({ session }) {
                   <div className='grid grid-cols-1 gap-6 sm:gap-4 md:grid-cols-3 '>
                     <div>
                       <h1>Outstanding</h1>
-                      <p>$0.00</p>
+                      <p className='text-red-400'>$500.00</p>
                     </div>
                     <div>
                       <h1>Paid</h1>
-                      <p>$2000.00</p>
+                      <p className='text-green-400'>$2000.00</p>
                     </div>
                     <div>
                       <h1>Total</h1>
-                      <p className='text-green-400'> $2000.00</p>
+                      <p className='text-black'> $2500.00</p>
                     </div>
                   </div>
                 </div>
