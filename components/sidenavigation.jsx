@@ -14,7 +14,7 @@ export default function SideNav({ children, page, pageTitle }) {
         <div className='md:hidden'>
           <div
             className={`fixed inset-0 flex transition-all delay-400 ease-linear duration-300 ${
-              show ? 'z-50' : 'z-0'
+              show ? 'z-30' : 'z-0'
             }`}
           >
             <div className='fixed inset-0'>
@@ -624,7 +624,7 @@ export default function SideNav({ children, page, pageTitle }) {
         <div className='flex flex-col w-0 flex-1 overflow-hidden'>
           <div
             className={`md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 ${
-              show ? 'z-0' : 'z-50'
+              show ? 'z-0' : 'z-30'
             }`}
           >
             <button

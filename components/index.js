@@ -5,6 +5,7 @@ import CTA from './callToAction.jsx'
 import Stats from './stats.jsx'
 import Navigation from './navigation.jsx'
 import DropDownNav from './dropdownnav.jsx'
+import DropDownMenu from './dropdownmenu.jsx'
 import SideNav from './sidenavigation.jsx'
 import Login from './login.jsx'
 import Register from './register.jsx'
@@ -25,4 +26,5 @@ export {
   SideNav,
   Success,
   Error,
+  DropDownMenu
 }
