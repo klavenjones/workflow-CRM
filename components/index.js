@@ -10,6 +10,11 @@ import SideNav from './sidenavigation.jsx'
 import Login from './login.jsx'
 import Register from './register.jsx'
 import Footer from './footer.jsx'
+import ProjectCard from './cards/projects'
+import TaskCard from './cards/tasks'
+import InvoiceCard from './cards/invoice'
+import EarningsCard from './cards/earnings'
+import ActivityCard from './cards/activities'
 import { Success, Error } from './toast'
 
 export {
@@ -26,5 +31,8 @@ export {
   SideNav,
   Success,
   Error,
-  DropDownMenu
+  DropDownMenu,
+  ProjectCard,
+  TaskCard,
+  ActivityCard,
 }
