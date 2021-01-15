@@ -69,7 +69,7 @@ export default function SideNav({ children, page, pageTitle }) {
                   {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                   <div className='px-2 space-y-1'>
                     <a
-                      href='#'
+                      href='/dashboard'
                       className={`${
                         page === 'dashboard'
                           ? 'bg-gray-900 text-white'
@@ -96,7 +96,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Dashboard
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/clients'
                       className={`${
                         page === 'clients'
                           ? 'bg-gray-900 text-white'
@@ -122,7 +122,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Clients
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/projects'
                       className={`${
                         page === 'projects'
                           ? 'bg-gray-900 text-white'
@@ -148,7 +148,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Projects
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/invoices'
                       className={`${
                         page === 'invoices'
                           ? 'bg-gray-900 text-white'
@@ -174,7 +174,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Invoices
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/documents'
                       className={`${
                         page === 'documents'
                           ? 'bg-gray-900 text-white'
@@ -200,7 +200,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Documents
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/tasks'
                       className={`${
                         page === 'tasks'
                           ? 'bg-gray-900 text-white'
@@ -229,7 +229,7 @@ export default function SideNav({ children, page, pageTitle }) {
                   <div className='mt-6 pt-6'>
                     <div className='px-2 space-y-1'>
                       <a
-                        href='#'
+                        href='/dashboard/settings'
                         className={`${
                           page === 'log out'
                             ? 'bg-gray-900 text-white'
@@ -355,7 +355,7 @@ export default function SideNav({ children, page, pageTitle }) {
                   {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                   <div className='px-2 space-y-1'>
                     <a
-                      href='#'
+                      href='/dashboard'
                       className={`${
                         page === 'dashboard'
                           ? 'bg-gray-900 text-white'
@@ -382,7 +382,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Dashboard
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/clients'
                       className={`${
                         page === 'clients'
                           ? 'bg-gray-900 text-white'
@@ -408,7 +408,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Clients
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/projects'
                       className={`${
                         page === 'projects'
                           ? 'bg-gray-900 text-white'
@@ -434,7 +434,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Projects
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/invoices'
                       className={`${
                         page === 'invoices'
                           ? 'bg-gray-900 text-white'
@@ -460,7 +460,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Invoices
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/documents'
                       className={`${
                         page === 'documents'
                           ? 'bg-gray-900 text-white'
@@ -486,7 +486,7 @@ export default function SideNav({ children, page, pageTitle }) {
                       Documents
                     </a>
                     <a
-                      href='#'
+                      href='/dashboard/tasks'
                       className={`${
                         page === 'tasks'
                           ? 'bg-gray-900 text-white'
@@ -547,7 +547,7 @@ export default function SideNav({ children, page, pageTitle }) {
                         Settings
                       </a>
                       <a
-                        href='#'
+                        href='dashboard/clients'
                         onClick={async () => {
                           firebase.auth().signOut()
                           nookies.destroy(undefined, 'token')
@@ -599,7 +599,7 @@ export default function SideNav({ children, page, pageTitle }) {
               </div>
 
               {/* <div className='flex-shrink-0 flex bg-gray-700 p-4'>
-                <a href='#' className='flex-shrink-0 w-full group block'>
+                <a href='dashboard/clients' className='flex-shrink-0 w-full group block'>
                   <div className='flex items-center'>
                     <div>
                       <img
