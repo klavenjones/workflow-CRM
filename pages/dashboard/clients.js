@@ -51,7 +51,7 @@ function Clients({ session }) {
                   name='search_candidate'
                   id='search_candidate'
                   className='hidden focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-none rounded-l-md pl-10 sm:block sm:text-sm border-gray-300'
-                  placeholder='Search candidates'
+                  placeholder='Search Clients'
                   onFocus={() => setFocus(true)}
                   onBlur={() => setFocus(false)}
                 />
