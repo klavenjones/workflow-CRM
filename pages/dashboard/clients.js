@@ -98,7 +98,7 @@ function Clients({ session }) {
                   Leslie Alexander
                 </p>
                 <p className='text-sm text-gray-500 truncate'>
-                  Co-Founder / CEO
+                  LesAlex@email.com
                 </p>
               </a>
             </div>
@@ -125,7 +125,7 @@ function Clients({ session }) {
                   Michael Foster
                 </p>
                 <p className='text-sm text-gray-500 truncate'>
-                  Co-Founder / CTO
+                  MFoster@email.com
                 </p>
               </a>
             </div>
@@ -150,7 +150,7 @@ function Clients({ session }) {
                   Dries Vincent
                 </p>
                 <p className='text-sm text-gray-500 truncate'>
-                  Manager, Business Relations
+                  DriesV@email.com
                 </p>
               </a>
             </div>
@@ -176,9 +176,7 @@ function Clients({ session }) {
                 <p className='text-sm font-medium text-gray-900'>
                   Lindsay Walton
                 </p>
-                <p className='text-sm text-gray-500 truncate'>
-                  Front-end Developer
-                </p>
+                <p className='text-sm text-gray-500 truncate'>LW@email.com</p>
               </a>
             </div>
             {/* Dropdown */}
