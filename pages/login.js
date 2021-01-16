@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { useAuth } from '../context/auth'
 import { Navigation, Login } from '../components'
 
@@ -23,12 +24,11 @@ export default function LoginPage() {
             </h2>
             <p className='mt-2 text-center text-sm text-gray-600 max-w'>
               Don't have an account?{'  '}
-              <a
-                href='/register'
-                className='font-medium text-indigo-600 hover:text-indigo-500'
-              >
-                Sign up
-              </a>
+              <Link href='/register'>
+                <a className='font-medium text-indigo-600 hover:text-indigo-500'>
+                  Sign up
+                </a>
+              </Link>
             </p>
           </div>
           <Login />

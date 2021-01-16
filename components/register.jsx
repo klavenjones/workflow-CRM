@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 
 import firebaseClient from '../util/firebase/firebaseClient'

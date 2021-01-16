@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { useAuth } from '../context/auth'
 import { Navigation, Register } from '../components'
 
@@ -23,12 +24,11 @@ export default function RegisterPage() {
             </h2>
             <p className='mt-2 text-center text-sm text-gray-600 max-w'>
               Already have an account?{'  '}
-              <a
-                href='/login'
-                className='font-medium text-indigo-600 hover:text-indigo-500'
-              >
-                Login
-              </a>
+              <Link href='/login'>
+                <a className='font-medium text-indigo-600 hover:text-indigo-500'>
+                  Login
+                </a>
+              </Link>
             </p>
           </div>
           <Register />

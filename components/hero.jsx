@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import DropDownNav from './dropdownnav'
 import { useForm } from 'react-hook-form'
 import { useToasts } from 'react-toast-notifications'
@@ -103,14 +104,16 @@ export default function Hero() {
           >
             <div className='flex items-center flex-1'>
               <div className='flex items-center justify-between w-full md:w-auto'>
-                <a href='#'>
-                  <span className='sr-only'>Workflow</span>
-                  <img
-                    className='h-8 w-auto sm:h-10'
-                    src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
-                    alt='Logo'
-                  />
-                </a>
+                <Link href='#'>
+                  <a>
+                    <span className='sr-only'>Workflow</span>
+                    <img
+                      className='h-8 w-auto sm:h-10'
+                      src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
+                      alt='Logo'
+                    />
+                  </a>
+                </Link>
                 <div className='-mr-2 flex items-center md:hidden'>
                   <button
                     type='button'
@@ -140,28 +143,25 @@ export default function Hero() {
                 </div>
               </div>
               <div className='hidden space-x-10 md:flex md:ml-auto md:mr-10'>
-                <a
-                  href='#get-started'
-                  className='font-medium text-white hover:text-gray-300'
-                >
-                  Get Started
-                </a>
-                <a
-                  href='#features'
-                  className='font-medium text-white hover:text-gray-300'
-                >
-                  Features
-                </a>
+                <Link href='#get-started'>
+                  <a className='font-medium text-white hover:text-gray-300'>
+                    Get Started
+                  </a>
+                </Link>
+                <Link href='#features'>
+                  <a className='font-medium text-white hover:text-gray-300'>
+                    Features
+                  </a>
+                </Link>
               </div>
             </div>
 
             <div className='hidden md:flex'>
-              <a
-                href='/login'
-                className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700'
-              >
-                Log in
-              </a>
+              <Link href='/login'>
+                <a className='inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700'>
+                  Log in
+                </a>
+              </Link>
             </div>
           </nav>
           <DropDownNav show={visible} toggle={toggleNav} />
@@ -171,31 +171,30 @@ export default function Hero() {
               <div className='lg:grid lg:grid-cols-12 lg:gap-8'>
                 <div className='px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center'>
                   <div>
-                    <a
-                      href='/register'
-                      className='inline-flex items-center text-white bg-gray-900 rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200'
-                    >
-                      <span className='px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-500 rounded-full'>
-                        Let's Work
-                      </span>
-                      <span className='ml-4 text-sm'>
-                        Manage your business today.
-                      </span>
-                      {/* Heroicon name: chevron-right */}
-                      <svg
-                        className='ml-2 w-5 h-5 text-gray-500'
-                        xmlns='http://www.w3.org/2000/svg'
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                        aria-hidden='true'
-                      >
-                        <path
-                          fillRule='evenodd'
-                          d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
-                          clipRule='evenodd'
-                        />
-                      </svg>
-                    </a>
+                    <Link href='/register'>
+                      <a className='inline-flex items-center text-white bg-gray-900 rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200'>
+                        <span className='px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-500 rounded-full'>
+                          Let's Work
+                        </span>
+                        <span className='ml-4 text-sm'>
+                          Manage your business today.
+                        </span>
+                        {/* Heroicon name: chevron-right */}
+                        <svg
+                          className='ml-2 w-5 h-5 text-gray-500'
+                          xmlns='http://www.w3.org/2000/svg'
+                          viewBox='0 0 20 20'
+                          fill='currentColor'
+                          aria-hidden='true'
+                        >
+                          <path
+                            fillRule='evenodd'
+                            d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
+                            clipRule='evenodd'
+                          />
+                        </svg>
+                      </a>
+                    </Link>
                     <h1 className='mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:leading-none lg:mt-6  md:text-5xl lg:text-5xl xl:text-6xl'>
                       <span className='md:block'>Keep track of your</span>{' '}
                       <span className='text-indigo-400 md:block'>
