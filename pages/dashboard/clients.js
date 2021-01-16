@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import nookies from 'nookies'
 
 import { SideNav, DropDownMenu } from '../../components'
@@ -80,34 +81,39 @@ function Clients({ session }) {
 
         {/* List Groups */}
         <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
-          <div className='relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-            {/* Client Avatar */}
-            <div className='flex-shrink-0'>
-              <img
-                className='h-10 w-10 rounded-full'
-                src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-                alt
-              />
-            </div>
+          <Link href='/dashboard/client/detail'>
+            <a>
+              <div className='relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
+                {/* Client Avatar */}
+                <div className='flex-shrink-0'>
+                  <img
+                    className='h-10 w-10 rounded-full'
+                    src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+                    alt
+                  />
+                </div>
 
-            {/* Client Meta */}
-            <div className='flex-1 min-w-0'>
-              <a href='#' className='focus:outline-none'>
-                <span className='absolute inset-0' aria-hidden='true' />
-                <p className='text-sm font-medium text-gray-900'>
-                  Leslie Alexander
-                </p>
-                <p className='text-sm text-gray-500 truncate'>
-                  LesAlex@email.com
-                </p>
-              </a>
-            </div>
+                {/* Client Meta */}
+                <div className='flex-1 min-w-0'>
+                  <a href='#' className='focus:outline-none'>
+                    <span className='absolute inset-0' aria-hidden='true' />
+                    <p className='text-sm font-medium text-gray-900'>
+                      Leslie Alexander
+                    </p>
+                    <p className='text-sm text-gray-500 truncate'>
+                      LesAlex@email.com
+                    </p>
+                  </a>
+                </div>
 
-            {/* Menu */}
-            <div className='h-full flex items-center'>
-              <DropDownMenu />
-            </div>
-          </div>
+                {/* Menu */}
+                <div className='h-full flex items-center'>
+                  <DropDownMenu />
+                </div>
+              </div>
+            </a>
+          </Link>
+
           <div className='relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
             {/* Avatar */}
             <div className='flex-shrink-0'>
