@@ -15,6 +15,9 @@ import TaskCard from './cards/tasks'
 import InvoiceCard from './cards/invoice'
 import EarningsCard from './cards/earnings'
 import ActivityCard from './cards/activities'
+import NoteCard from './cards/notes'
+import DocumentCard from './cards/documents'
+import ClientCard from './cards/clients'
 import { Success, Error } from './toast'
 
 export {
@@ -35,4 +38,9 @@ export {
   ProjectCard,
   TaskCard,
   ActivityCard,
+  NoteCard,
+  EarningsCard,
+  InvoiceCard,
+  DocumentCard,
+  ClientCard,
 }

@@ -15,7 +15,7 @@ import { verifyIdToken } from '../../../util/firebase/firebaseAdmin'
 import firebaseClient from '../../../util/firebase/firebaseClient'
 import EarningsCard from '../../../components/cards/earnings'
 
-function Clients({ session }) {
+function Client({ session }) {
   const [focused, setFocus] = React.useState(false)
   firebaseClient()
 
@@ -73,7 +73,7 @@ function Clients({ session }) {
             <div className='bg-white overflow-hidden shadow rounded-lg'>
               <div className='px-4 py-5 sm:p-6'>
                 <div className='flex items-center justify-between'>
-                  <div>
+                  <div className="flex-1">
                     <h3 className='text-lg leading-6 font-medium text-gray-900'>
                       Contact Info
                     </h3>
@@ -81,14 +81,14 @@ function Clients({ session }) {
                       Personal details and application.
                     </p>
                   </div>
-                  <div>
+                  <div className="flex-shrink">
                     <button
                       type='button'
-                      className='inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                      className='inline-flex items-center px-2 py-1 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                     >
                       Email Client
                       {/* Heroicon name: mail */}
-                      <MdEmail className='ml-2 -mr-1 h-5 w-5' />
+                      <MdEmail className='ml-2 -mr-1 h-4 w-4' />
                     </button>
                   </div>
                 </div>
@@ -296,4 +296,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default Clients
+export default Client
