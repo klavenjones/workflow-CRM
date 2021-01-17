@@ -88,27 +88,20 @@ function Invoices({ session }) {
           {/* This example requires Tailwind CSS v2.0+ */}
           <div>
             <ul className='mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-1 lg:grid-cols-1'>
-              <Link href='/dashboard/project/detail'>
-                <a>
-                  <li className='col-span-1 flex shadow-sm rounded-md relative hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-50'>
-                    {/* <div className='flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md'>
-                    GA
-                  </div> */}
-                    <div className='flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate'>
-                      <div className='flex-1 px-4 py-2 text-sm truncate'>
-                        <div className='mb-2 sm:mb-1'>
-                          <a
-                            href='#'
-                            className='text-gray-900 font-medium hover:text-gray-600'
-                          >
-                            Invoice Title
-                          </a>
-                        </div>
-                        <div className='space-y-3  flex flex-col md:flex-row  md:items-center md:space-x-12'>
-                          <p className='flex items-center text-gray-500 md:self-end'>
+              <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
+                <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
+                  INV0001
+                </div>
+                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md truncate'>
+                  <Link href='/dashboard/invoice/detail'>
+                    <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
+                      <div className='flex-1 px-4 py-2 text-sm '>
+                        <div className='mb-2'>Invoice Title</div>
+                        <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-12'>
+                          {/* <p className='flex items-center text-gray-500 md:self-end'>
                             <HiCalendar className='mr-1' />
                             <span>Inv001</span>
-                          </p>
+                          </p> */}
                           <p className='flex items-center text-gray-500'>
                             <BsPersonFill className='mr-1' />
                             <span>Client Name</span>
@@ -136,127 +129,105 @@ function Invoices({ session }) {
                           </p>
                         </div>
                       </div>
+                    </a>
+                  </Link>
+                  <div className='flex-shrink-0 pr-4 cursor-pointer'>
+                    <DropDownMenu />
+                  </div>
+                </div>
+              </li>
+              <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
+                <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
+                  INV0002
+                </div>
+                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md truncate'>
+                  <Link href='/dashboard/invoice/detail'>
+                    <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
+                      <div className='flex-1 px-4 py-2 text-sm '>
+                        <div className='mb-2'>Invoice Title</div>
+                        <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-12'>
+                          {/* <p className='flex items-center text-gray-500 md:self-end'>
+                            <HiCalendar className='mr-1' />
+                            <span>Inv001</span>
+                          </p> */}
+                          <p className='flex items-center text-gray-500'>
+                            <BsPersonFill className='mr-1' />
+                            <span>Client Name</span>
+                          </p>
+                          <p className='flex items-center text-gray-700'>
+                            <HiCalendar className='mr-1' />
+                            <span>Jun 12, 2020</span>
+                          </p>
+                          <p className='flex items-center text-gray-400'>
+                            <HiCalendar className='mr-1' />
+                            <span>Jul 12, 2020</span>
+                          </p>
 
-                      <div className='flex-shrink-0 pr-4'>
-                        <DropDownMenu />
+                          <p className='flex items-center text-red-500'>
+                            <FaFileInvoiceDollar className='mr-1' />
+                            <span>$500</span>
+                          </p>
+                          <p className='flex items-center text-green-500'>
+                            <BiDollarCircle className='mr-1' />
+                            <span>$5000</span>
+                          </p>
+                          <p className='flex items-center text-black'>
+                            <HiCash className='mr-1' />
+                            <span>$5500</span>
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </a>
-              </Link>
-              <li className='col-span-1 flex shadow-sm rounded-md relative'>
-                {/* <div className='flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md'>
-                    GA
-                  </div> */}
-                <div className='flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate'>
-                  <div className='flex-1 px-4 py-2 text-sm truncate'>
-                    <div className='mb-2 sm:mb-1'>
-                      <a
-                        href='#'
-                        className='text-gray-900 font-medium hover:text-gray-600'
-                      >
-                        Invoice Title
-                      </a>
-                    </div>
-                    <div className='space-y-1 flex flex-col sm:flex-row'>
-                      <p className='flex items-center text-gray-500 mr-4'>
-                        <BsPersonFill className='mr-1' />
-                        <span>Client Name</span>
-                      </p>
-                      <p className='flex items-center text-gray-500 mr-4'>
-                        <HiCalendar className='mr-1' />
-                        <span>Jun 12, 2020</span>
-                      </p>
-                      <p className='flex items-center text-red-500 mr-4'>
-                        <FaFileInvoiceDollar className='mr-1' />
-                        <span>$500</span>
-                      </p>
-                      <p className='flex items-center text-green-500 mr-4'>
-                        <BiDollarCircle className='mr-1' />
-                        <span>$5000</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className='flex-shrink-0 pr-4'>
+                    </a>
+                  </Link>
+                  <div className='flex-shrink-0 pr-4 cursor-pointer'>
                     <DropDownMenu />
                   </div>
                 </div>
               </li>
-              <li className='col-span-1 flex shadow-sm rounded-md relative'>
-                {/* <div className='flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md'>
-                    GA
-                  </div> */}
-                <div className='flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate'>
-                  <div className='flex-1 px-4 py-2 text-sm truncate'>
-                    <div className='mb-2 sm:mb-1'>
-                      <a
-                        href='#'
-                        className='text-gray-900 font-medium hover:text-gray-600'
-                      >
-                        Invoice Title
-                      </a>
-                    </div>
-                    <div className='space-y-1 flex flex-col sm:flex-row'>
-                      <p className='flex items-center text-gray-500 mr-4'>
-                        <BsPersonFill className='mr-1' />
-                        <span>Client Name</span>
-                      </p>
-                      <p className='flex items-center text-gray-500 mr-4'>
-                        <HiCalendar className='mr-1' />
-                        <span>Jun 12, 2020</span>
-                      </p>
-                      <p className='flex items-center text-red-500 mr-4'>
-                        <FaFileInvoiceDollar className='mr-1' />
-                        <span>$500</span>
-                      </p>
-                      <p className='flex items-center text-green-500 mr-4'>
-                        <BiDollarCircle className='mr-1' />
-                        <span>$5000</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className='flex-shrink-0 pr-4'>
-                    <DropDownMenu />
-                  </div>
+              <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
+                <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
+                  INV0003
                 </div>
-              </li>
-              <li className='col-span-1 flex shadow-sm rounded-md relative'>
-                {/* <div className='flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md'>
-                    GA
-                  </div> */}
-                <div className='flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate'>
-                  <div className='flex-1 px-4 py-2 text-sm truncate'>
-                    <div className='mb-2 sm:mb-1'>
-                      <a
-                        href='#'
-                        className='text-gray-900 font-medium hover:text-gray-600'
-                      >
-                        Invoice Title
-                      </a>
-                    </div>
-                    <div className='space-y-1 flex flex-col sm:flex-row'>
-                      <p className='flex items-center text-gray-500 mr-4'>
-                        <BsPersonFill className='mr-1' />
-                        <span>Client Name</span>
-                      </p>
-                      <p className='flex items-center text-gray-500 mr-4'>
-                        <HiCalendar className='mr-1' />
-                        <span>Jun 12, 2020</span>
-                      </p>
-                      <p className='flex items-center text-red-500 mr-4'>
-                        <FaFileInvoiceDollar className='mr-1' />
-                        <span>$500</span>
-                      </p>
-                      <p className='flex items-center text-green-500 mr-4'>
-                        <BiDollarCircle className='mr-1' />
-                        <span>$5000</span>
-                      </p>
-                    </div>
-                  </div>
+                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200  bg-white hover:bg-gray-100 rounded-r-md truncate'>
+                  <Link href='/dashboard/invoice/detail'>
+                    <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
+                      <div className='flex-1 px-4 py-2 text-sm '>
+                        <div className='mb-2'>Invoice Title</div>
+                        <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-12'>
+                          {/* <p className='flex items-center text-gray-500 md:self-end'>
+                            <HiCalendar className='mr-1' />
+                            <span>Inv001</span>
+                          </p> */}
+                          <p className='flex items-center text-gray-500'>
+                            <BsPersonFill className='mr-1' />
+                            <span>Client Name</span>
+                          </p>
+                          <p className='flex items-center text-gray-700'>
+                            <HiCalendar className='mr-1' />
+                            <span>Jun 12, 2020</span>
+                          </p>
+                          <p className='flex items-center text-gray-400'>
+                            <HiCalendar className='mr-1' />
+                            <span>Jul 12, 2020</span>
+                          </p>
 
-                  <div className='flex-shrink-0 pr-4'>
+                          <p className='flex items-center text-red-500'>
+                            <FaFileInvoiceDollar className='mr-1' />
+                            <span>$500</span>
+                          </p>
+                          <p className='flex items-center text-green-500'>
+                            <BiDollarCircle className='mr-1' />
+                            <span>$5000</span>
+                          </p>
+                          <p className='flex items-center text-black'>
+                            <HiCash className='mr-1' />
+                            <span>$5500</span>
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </Link>
+                  <div className='flex-shrink-0 pr-4 cursor-pointer'>
                     <DropDownMenu />
                   </div>
                 </div>
