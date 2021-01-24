@@ -186,7 +186,7 @@ function Invoice({ session }) {
                                       2
                                     </p>
                                     <p className='text-sm font-medium text-gray-400  w-32  truncate'>
-                                      $200.00
+                                      $2000.00
                                     </p>
                                     <p className='text-sm font-medium text-gray-400  w-32 truncate'>
                                       $4000.00
@@ -204,7 +204,7 @@ function Invoice({ session }) {
                                       2
                                     </p>
                                     <p className='text-sm font-medium text-gray-400  w-32  truncate'>
-                                      $200.00
+                                      $2000.00
                                     </p>
                                     <p className='text-sm font-medium text-gray-400  w-32 truncate'>
                                       $4000.00
@@ -222,7 +222,7 @@ function Invoice({ session }) {
                                       2
                                     </p>
                                     <p className='text-sm font-medium text-gray-400  w-32  truncate'>
-                                      $200.00
+                                      $2000.00
                                     </p>
                                     <p className='text-sm font-medium text-gray-400  w-32 truncate'>
                                       $4000.00
@@ -265,23 +265,27 @@ function Invoice({ session }) {
                             </span>
                           </span>
                         </dd>
-                      </div>
-                      {/* <div className='py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          Due on
+                          <button
+                            type='button'
+                            className='bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                          >
+                            Add Discount & Taxes
+                          </button>
+                        </dt>
+                      </div>
+                      <div className='py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4'>
+                        <dt className='text-2xl font-medium text-black'>
+                          Total
                         </dt>
                         <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
-                          <span className='flex-grow'>Feb 21, 2021</span>
-                          <span className='ml-4 flex-shrink-0'>
-                            <button
-                              type='button'
-                              className='bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                            >
-                              Update
-                            </button>
+                          <span className='ml-auto flex-shrink-0'>
+                            <span className='bg-white text-3xl rounded-md font-bold hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+                              $12,000.00
+                            </span>
                           </span>
                         </dd>
-                      </div> */}
+                      </div>
                     </dl>
                   </div>
                 </>
