@@ -260,9 +260,9 @@ function Invoice({ session }) {
                         </dt>
                         <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
                           <span className='ml-auto flex-shrink-0'>
-                            <p className='bg-white rounded-md font-bold hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+                            <span className='bg-white rounded-md font-bold hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
                               - $0.00
-                            </p>
+                            </span>
                           </span>
                         </dd>
                       </div>
