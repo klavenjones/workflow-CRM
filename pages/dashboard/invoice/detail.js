@@ -37,7 +37,7 @@ function Invoice({ session }) {
 
         {/* Invoice Detail Cards */}
         <div className='grid grid-cols-1 gap-4 sm:grid-cols-12'>
-          <div className='col-span-8'>
+          <div className='col-span-12'>
             {/* Invoice Info */}
             <div className='bg-white overflow-hidden shadow rounded-lg'>
               <div className='px-4 py-5 sm:p-6'>
@@ -45,17 +45,17 @@ function Invoice({ session }) {
                   {/* This example requires Tailwind CSS v2.0+ */}
                   <div>
                     <h3 className='text-lg leading-6 font-medium text-gray-900'>
-                      Applicant Information
+                      Invoice Information
                     </h3>
                     <p className='mt-1 max-w-2xl text-sm text-gray-500'>
-                      Personal details and application.
+                      Invoice Details
                     </p>
                   </div>
                   <div className='mt-5 border-t border-gray-200'>
                     <dl className='divide-y divide-gray-200'>
                       <div className='py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          Full name
+                          Bill to
                         </dt>
                         <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
                           <span className='flex-grow'>Margot Foster</span>
@@ -71,10 +71,10 @@ function Invoice({ session }) {
                       </div>
                       <div className='py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          Application for
+                          Company
                         </dt>
                         <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
-                          <span className='flex-grow'>Backend Developer</span>
+                          <span className='flex-grow'>Miramom</span>
                           <span className='ml-4flex-shrink-0'>
                             <button
                               type='button'
@@ -105,10 +105,10 @@ function Invoice({ session }) {
                       </div>
                       <div className='py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          Salary expectation
+                          Issued On
                         </dt>
                         <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
-                          <span className='flex-grow'> $120,000</span>
+                          <span className='flex-grow'> Jan 21, 2021 </span>
                           <span className='ml-4flex-shrink-0'>
                             <button
                               type='button'
@@ -119,19 +119,13 @@ function Invoice({ session }) {
                           </span>
                         </dd>
                       </div>
+
                       <div className='py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          About
+                          Due on
                         </dt>
                         <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
-                          <span className='flex-grow'>
-                            Fugiat ipsum ipsum deserunt culpa aute sint do
-                            nostrud anim incididunt cillum culpa consequat.
-                            Excepteur qui ipsum aliquip consequat sint. Sit id
-                            mollit nulla mollit nostrud in ea officia proident.
-                            Irure nostrud pariatur mollit ad adipisicing
-                            reprehenderit deserunt qui eu.
-                          </span>
+                          <span className='flex-grow'>Feb 21, 2021</span>
                           <span className='ml-4 flex-shrink-0'>
                             <button
                               type='button'
@@ -144,95 +138,150 @@ function Invoice({ session }) {
                       </div>
                       <div className='py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4'>
                         <dt className='text-sm font-medium text-gray-500'>
-                          Attachments
+                          Items
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
-                          <ul className='border border-gray-200 rounded-md divide-y divide-gray-200'>
-                            <li className='pl-3 pr-4 py-3 flex items-center justify-between text-sm'>
+                          {/* Add Item Button */}
+                          <div className='mb-5 text-right'>
+                            <button
+                              type='button'
+                              className='bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                            >
+                              Add Item
+                            </button>
+                          </div>
+                        </dd>
+                        {/* Item List*/}
+                        <div className='mt-1 text-sm text-gray-900  sm:mt-0 sm:col-span-3'>
+                          <div className='mb-5'>
+                            <div className='flex justify-between'>
                               <div className='w-0 flex-1 flex items-center'>
-                                {/* Heroicon name: paper-clip */}
-                                <svg
-                                  className='flex-shrink-0 h-5 w-5 text-gray-400'
-                                  xmlns='http://www.w3.org/2000/svg'
-                                  viewBox='0 0 20 20'
-                                  fill='currentColor'
-                                  aria-hidden='true'
-                                >
-                                  <path
-                                    fillRule='evenodd'
-                                    d='M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z'
-                                    clipRule='evenodd'
-                                  />
-                                </svg>
-                                <span className='ml-2 flex-1 w-0 truncate'>
-                                  resume_back_end_developer.pdf
-                                </span>
+                                <p className='flex-1 w-0 text-sm font-medium text-gray-400'>
+                                  Item
+                                </p>
                               </div>
-                              <div className='ml-4 flex-shrink-0 flex space-x-4'>
-                                <button
-                                  type='button'
-                                  className='bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                                >
-                                  Update
-                                </button>
-                                <span
-                                  className='text-gray-300'
-                                  aria-hidden='true'
-                                >
-                                  |
-                                </span>
-                                <button
-                                  type='button'
-                                  className='bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                                >
-                                  Remove
-                                </button>
+                              <div className='flex flex-grow justify-end text-right pr-2'>
+                                <p className='text-sm font-medium text-gray-400 w-32'>
+                                  Units
+                                </p>
+                                <p className='text-sm font-medium text-gray-400 w-32'>
+                                  Rate
+                                </p>
+                                <p className='text-sm font-medium text-gray-400 w-32'>
+                                  Total
+                                </p>
                               </div>
-                            </li>
-                            <li className='pl-3 pr-4 py-3 flex items-center justify-between text-sm'>
-                              <div className='w-0 flex-1 flex items-center'>
-                                {/* Heroicon name: paper-clip */}
-                                <svg
-                                  className='flex-shrink-0 h-5 w-5 text-gray-400'
-                                  xmlns='http://www.w3.org/2000/svg'
-                                  viewBox='0 0 20 20'
-                                  fill='currentColor'
-                                  aria-hidden='true'
-                                >
-                                  <path
-                                    fillRule='evenodd'
-                                    d='M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z'
-                                    clipRule='evenodd'
-                                  />
-                                </svg>
-                                <span className='ml-2 flex-1 w-0 truncate'>
-                                  coverletter_back_end_developer.pdf
-                                </span>
-                              </div>
-                              <div className='ml-4 flex-shrink-0 flex space-x-4'>
-                                <button
-                                  type='button'
-                                  className='bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                                >
-                                  Update
-                                </button>
-                                <span
-                                  className='text-gray-300'
-                                  aria-hidden='true'
-                                >
-                                  |
-                                </span>
-                                <button
-                                  type='button'
-                                  className='bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                                >
-                                  Remove
-                                </button>
-                              </div>
-                            </li>
-                          </ul>
+                            </div>
+                            <div className='my-4'>
+                              <ul className='border border-gray-200 rounded-sm divide-y divide-gray-200'>
+                                {/* List Items */}
+                                <li className='pr-2 py-3 flex items-center justify-between text-sm'>
+                                  <div className='w-0 flex-1 flex items-center'>
+                                    <p className='ml-2 flex-1 w-0 '>
+                                      Website Creation
+                                    </p>
+                                  </div>
+                                  <div className='flex flex-grow justify-end text-right'>
+                                    <p className='text-sm font-bold text-gray-400 w-32 truncate'>
+                                      2
+                                    </p>
+                                    <p className='text-sm font-medium text-gray-400  w-32  truncate'>
+                                      $200.00
+                                    </p>
+                                    <p className='text-sm font-medium text-gray-400  w-32 truncate'>
+                                      $4000.00
+                                    </p>
+                                  </div>
+                                </li>
+                                <li className='pr-2 py-3 flex items-center justify-between text-sm'>
+                                  <div className='w-0 flex-1 flex items-center '>
+                                    <span className='ml-2 flex-1 w-0'>
+                                      Website Creation
+                                    </span>
+                                  </div>
+                                  <div className='flex flex-grow justify-end text-right'>
+                                    <p className='text-sm font-bold text-gray-400 w-32 truncate'>
+                                      2
+                                    </p>
+                                    <p className='text-sm font-medium text-gray-400  w-32  truncate'>
+                                      $200.00
+                                    </p>
+                                    <p className='text-sm font-medium text-gray-400  w-32 truncate'>
+                                      $4000.00
+                                    </p>
+                                  </div>
+                                </li>
+                                <li className='pr-2 py-3 flex items-center justify-between text-sm'>
+                                  <div className='w-0 flex-1 flex items-center '>
+                                    <span className='ml-2 flex-1 w-0 '>
+                                      Website Creation
+                                    </span>
+                                  </div>
+                                  <div className='flex flex-grow justify-end text-right'>
+                                    <p className='text-sm font-bold text-gray-400 w-32 truncate'>
+                                      2
+                                    </p>
+                                    <p className='text-sm font-medium text-gray-400  w-32  truncate'>
+                                      $200.00
+                                    </p>
+                                    <p className='text-sm font-medium text-gray-400  w-32 truncate'>
+                                      $4000.00
+                                    </p>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4'>
+                        <dt className='text-sm font-medium text-gray-500'>
+                          Subtotal
+                        </dt>
+                        <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
+                          <span className='ml-auto flex-shrink-0'>
+                            <p className='bg-white rounded-md font-bold hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+                              $12,000.00
+                            </p>
+                          </span>
+                        </dd>
+                        <dt className='text-sm font-medium text-gray-500'>
+                          % Taxes
+                        </dt>
+                        <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
+                          <span className='ml-auto flex-shrink-0'>
+                            <p className='bg-white rounded-md font-bold hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+                              $0.00
+                            </p>
+                          </span>
+                        </dd>
+                        <dt className='text-sm font-medium text-gray-500'>
+                          Discounts
+                        </dt>
+                        <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
+                          <span className='ml-auto flex-shrink-0'>
+                            <p className='bg-white rounded-md font-bold hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+                              - $0.00
+                            </p>
+                          </span>
                         </dd>
                       </div>
+                      {/* <div className='py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4'>
+                        <dt className='text-sm font-medium text-gray-500'>
+                          Due on
+                        </dt>
+                        <dd className='mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2'>
+                          <span className='flex-grow'>Feb 21, 2021</span>
+                          <span className='ml-4 flex-shrink-0'>
+                            <button
+                              type='button'
+                              className='bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                            >
+                              Update
+                            </button>
+                          </span>
+                        </dd>
+                      </div> */}
                     </dl>
                   </div>
                 </>

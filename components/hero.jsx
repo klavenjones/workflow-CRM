@@ -174,10 +174,10 @@ export default function Hero() {
                     <Link href='/register'>
                       <a className='inline-flex items-center text-white bg-gray-900 rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200'>
                         <span className='px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-500 rounded-full'>
-                          Let's Work
+                          What's New
                         </span>
                         <span className='ml-4 text-sm'>
-                          Manage your business today.
+                          Just shipped version 0.1.0
                         </span>
                         {/* Heroicon name: chevron-right */}
                         <svg
