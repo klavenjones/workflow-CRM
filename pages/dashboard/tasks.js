@@ -11,9 +11,11 @@ function Tasks({ session }) {
   if (session) {
     return (
       <SideNav page='tasks'>
-        <div>
-          <h1>Tasks</h1>
+        {/* Section Title */}
+        <div className='pb-5 mb-10 border-b border-gray-200 sm:flex sm:items-center sm:justify-between'>
+          <h3 className='text-2xl leading-6 font-xl text-gray-900'>Tasks</h3>
         </div>
+        
       </SideNav>
     )
   } else {

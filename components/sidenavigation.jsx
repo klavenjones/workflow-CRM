@@ -12,7 +12,7 @@ export default function SideNav({ children, page, pageTitle }) {
     <>
       <div className='h-screen flex overflow-hidden bg-gray-100'>
         {/* Off-canvas menu for mobile, show/hide based on off-canvas menu state. */}
-        <div className='md:hidden'>
+        <div className='lg:hidden'>
           <div
             className={`fixed inset-0 flex transition-all delay-400 ease-linear duration-300 ${
               show ? 'z-30' : 'z-0'

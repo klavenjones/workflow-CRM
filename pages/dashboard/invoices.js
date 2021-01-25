@@ -97,7 +97,7 @@ function Invoices({ session }) {
                     <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
                       <div className='flex-1 px-4 py-2 text-sm '>
                         <div className='mb-2'>Invoice Title</div>
-                        <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-12'>
+                        <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center lg:space-x-12'>
                           {/* <p className='flex items-center text-gray-500 md:self-end'>
                             <HiCalendar className='mr-1' />
                             <span>Inv001</span>

@@ -6,8 +6,7 @@ import { SideNav } from '../../../components'
 
 import { verifyIdToken } from '../../../util/firebase/firebaseAdmin'
 import firebaseClient from '../../../util/firebase/firebaseClient'
-import EarningsCard from '../../../components/cards/earnings'
-import InvoiceCard from '../../../components/cards/invoice'
+
 
 function Invoice({ session }) {
   const [focused, setFocus] = React.useState(false)
@@ -30,7 +29,13 @@ function Invoice({ session }) {
               type='button'
               className='inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500'
             >
-              Edit Invoice
+              Preview Invoice
+            </button>
+            <button
+              type='button'
+              className='inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500'
+            >
+              Send Invoice
             </button>
           </div>
         </div>
