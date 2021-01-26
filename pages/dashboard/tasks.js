@@ -85,6 +85,7 @@ function Tasks({ session }) {
 
         {/* Task List */}
         <ul className='mt-3 grid grid-cols-1 gap-5 sm:gap-6'>
+          
           {/* Task Item */}
           <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
             <div className='flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-md border-t border-l border-b  border-gray-200'>
