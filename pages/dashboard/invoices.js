@@ -92,12 +92,12 @@ function Invoices({ session }) {
                 <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
                   INV0001
                 </div>
-                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md truncate'>
+                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200  bg-white hover:bg-gray-100 rounded-r-md'>
                   <Link href='/dashboard/invoice/detail'>
                     <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
                       <div className='flex-1 px-4 py-2 text-sm '>
                         <div className='mb-2'>Invoice Title</div>
-                        <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center lg:space-x-12'>
+                        <div className='space-y-3 lg:space-y-0 flex flex-col lg:flex-row lg:items-center lg:space-x-12'>
                           {/* <p className='flex items-center text-gray-500 md:self-end'>
                             <HiCalendar className='mr-1' />
                             <span>Inv001</span>
@@ -140,12 +140,12 @@ function Invoices({ session }) {
                 <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
                   INV0002
                 </div>
-                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md truncate'>
+                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200  bg-white hover:bg-gray-100 rounded-r-md'>
                   <Link href='/dashboard/invoice/detail'>
                     <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
                       <div className='flex-1 px-4 py-2 text-sm '>
                         <div className='mb-2'>Invoice Title</div>
-                        <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-12'>
+                        <div className='space-y-3 lg:space-y-0 flex flex-col lg:flex-row lg:items-center lg:space-x-12'>
                           {/* <p className='flex items-center text-gray-500 md:self-end'>
                             <HiCalendar className='mr-1' />
                             <span>Inv001</span>
@@ -188,12 +188,12 @@ function Invoices({ session }) {
                 <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
                   INV0003
                 </div>
-                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200  bg-white hover:bg-gray-100 rounded-r-md truncate'>
+                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200  bg-white hover:bg-gray-100 rounded-r-md'>
                   <Link href='/dashboard/invoice/detail'>
                     <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
                       <div className='flex-1 px-4 py-2 text-sm '>
                         <div className='mb-2'>Invoice Title</div>
-                        <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-12'>
+                        <div className='space-y-3 lg:space-y-0 flex flex-col lg:flex-row lg:items-center lg:space-x-12'>
                           {/* <p className='flex items-center text-gray-500 md:self-end'>
                             <HiCalendar className='mr-1' />
                             <span>Inv001</span>

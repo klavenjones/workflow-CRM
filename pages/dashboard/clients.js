@@ -9,6 +9,10 @@ import {
   HiOutlineSearch,
   HiDotsVertical,
 } from 'react-icons/hi'
+import { BsPersonFill } from 'react-icons/bs'
+import { BiDollarCircle } from 'react-icons/bi'
+
+
 import { verifyIdToken } from '../../util/firebase/firebaseAdmin'
 import firebaseClient from '../../util/firebase/firebaseClient'
 
