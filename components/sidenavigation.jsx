@@ -344,7 +344,7 @@ export default function SideNav({ children, page, pageTitle }) {
         </div>
 
         {/* Static sidebar for desktop */}
-        <div className='hidden md:flex md:flex-shrink-0 relative'>
+        <div className='hidden lg:flex lg:flex-shrink-0 relative'>
           <div className='flex flex-col w-64'>
             {/* Sidebar component, swap this element with another sidebar if you like */}
             <div className='flex flex-col h-0 flex-1 bg-gray-800'>
@@ -632,7 +632,7 @@ export default function SideNav({ children, page, pageTitle }) {
 
         <div className='flex flex-col w-0 flex-1 overflow-hidden'>
           <div
-            className={`md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 ${
+            className={`lg:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 ${
               show ? 'z-0' : 'z-30'
             }`}
           >
