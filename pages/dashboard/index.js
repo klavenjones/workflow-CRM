@@ -1,14 +1,9 @@
 import React from 'react'
 import nookies from 'nookies'
 
-import { SideNav, DropDownMenu, ProjectCard, TaskCard } from '../../components'
-import { FaPlus, FaCalendar, FaChevronRight } from 'react-icons/fa'
-import { HiDotsVertical } from 'react-icons/hi'
-import { BiCheck } from 'react-icons/bi'
-
+import { SideNav, ProjectCard, TaskCard } from '../../components'
 import { verifyIdToken } from '../../util/firebase/firebaseAdmin'
 import firebaseClient from '../../util/firebase/firebaseClient'
-import firebase from 'firebase/app'
 import InvoiceCard from '../../components/cards/invoice'
 import EarningsCard from '../../components/cards/earnings'
 import ActivityCard from '../../components/cards/activities'

@@ -1,14 +1,13 @@
 import React from 'react'
 import { FaChevronDown } from 'react-icons/fa'
 
-
 export default function DropdownMenu() {
   const [showMenu, setShow] = React.useState(false)
   return (
     <>
       {/* Drop Down Menu*/}
       <FaChevronDown
-        className={`text-gray-400 transition-all ease-out duration-100 transform ${
+        className={`text-gray-400 transition-all ease-out duration-100 transform cursor-pointer ${
           showMenu ? '-rotate-180' : 'rotate-0'
         }`}
         onClick={() => setShow(!showMenu)}
