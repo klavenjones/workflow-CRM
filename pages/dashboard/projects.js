@@ -2,7 +2,7 @@ import React from 'react'
 import nookies from 'nookies'
 import Link from 'next/link'
 
-import { SideNav, DropDownMenu } from '../../components'
+import { SideNav, DropDownMenu, SectionHeader } from '../../components'
 import {
   HiSortAscending,
   HiOutlineChevronDown,
@@ -23,9 +23,7 @@ function Projects({ session }) {
     return (
       <SideNav page='projects'>
         {/* Section title */}
-        <div className='pb-5 mb-10 border-b border-gray-200 sm:flex sm:items-center sm:justify-between'>
-          <h3 className='text-2xl leading-6 font-xl text-gray-900'>Projects</h3>
-        </div>
+        <SectionHeader title='Projects' />
         {/* Search Bar */}
         <div className='pb-5 mb-10 sm:-ml-4 sm:flex sm:items-center sm:justify-between'>
           <div

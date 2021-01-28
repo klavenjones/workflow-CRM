@@ -1,7 +1,7 @@
 import React from 'react'
 import nookies from 'nookies'
 
-import { SideNav } from '../../components'
+import { SectionHeader, SideNav } from '../../components'
 import { FiChevronDown } from 'react-icons/fi'
 
 import { verifyIdToken } from '../../util/firebase/firebaseAdmin'
@@ -13,9 +13,7 @@ function Settings({ session }) {
     return (
       <SideNav page='settings'>
         {/* Section Title */}
-        <div className='pb-5 mb-10 border-b border-gray-200 sm:flex sm:items-center sm:justify-between'>
-          <h3 className='text-2xl leading-6 font-xl text-gray-900'>Settings</h3>
-        </div>
+        <SectionHeader title='Settings' />
 
         {/* Settings */}
 

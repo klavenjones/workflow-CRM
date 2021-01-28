@@ -18,6 +18,7 @@ import ActivityCard from './cards/activities'
 import NoteCard from './cards/notes'
 import DocumentCard from './cards/documents'
 import ClientCard from './cards/clients'
+import SectionHeader from './sectionheader'
 import { Success, Error } from './toast'
 
 export {
@@ -43,4 +44,5 @@ export {
   InvoiceCard,
   DocumentCard,
   ClientCard,
+  SectionHeader,
 }

@@ -12,7 +12,7 @@ import {
 
 import { BsPersonFill } from 'react-icons/bs'
 
-import { SideNav, DropDownMenu } from '../../components'
+import { SideNav, DropDownMenu, SectionHeader } from '../../components'
 
 import { verifyIdToken } from '../../util/firebase/firebaseAdmin'
 import firebaseClient from '../../util/firebase/firebaseClient'
@@ -24,9 +24,7 @@ function Tasks({ session }) {
     return (
       <SideNav page='tasks'>
         {/* Section Title */}
-        <div className='pb-5 mb-10 border-b border-gray-200 sm:flex sm:items-center sm:justify-between'>
-          <h3 className='text-2xl leading-6 font-xl text-gray-900'>Tasks</h3>
-        </div>
+        <SectionHeader title='Tasks' />
         {/* Search Bar */}
         <div className='pb-5 mb-10 sm:-ml-4 sm:flex sm:items-center sm:justify-between'>
           <div
@@ -85,7 +83,6 @@ function Tasks({ session }) {
 
         {/* Task List */}
         <ul className='mt-3 grid grid-cols-1 gap-5 sm:gap-6'>
-          
           {/* Task Item */}
           <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
             <div className='flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-md border-t border-l border-b  border-gray-200'>

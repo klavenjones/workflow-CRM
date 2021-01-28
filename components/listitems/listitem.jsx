@@ -10,7 +10,7 @@ import { BsPersonFill } from 'react-icons/bs'
 import { BiDollarCircle } from 'react-icons/bi'
 import { DropDownMenu } from '../'
 
-function ClientListItem() {
+function ClientListItem(client) {
   return (
     <div className='relative rounded-lg border border-gray-300 bg-white px-6 py-0 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
       {/* Client Avatar */}
@@ -47,7 +47,7 @@ function ClientListItem() {
   )
 }
 
-function ProjectListItem() {
+function ProjectListItem(project) {
   return (
     <li className='col-span-1 flex shadow-sm rounded-md relative'>
       {/* <div className='flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md'>
@@ -91,7 +91,7 @@ function ProjectListItem() {
   )
 }
 
-function InvoiceListItem() {
+function InvoiceListItem(invoice) {
   return (
     <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
       <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
@@ -145,7 +145,7 @@ function InvoiceListItem() {
   )
 }
 
-function DocumentItem() {
+function DocumentItem(document) {
   return (
     <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
       <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md rounded-l-md'>
@@ -178,7 +178,7 @@ function DocumentItem() {
   )
 }
 
-function TaskItem() {
+function TaskItem(task) {
   return (
     <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
       <div className='flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-md border-t border-l border-b  border-gray-200'>
@@ -235,7 +235,7 @@ function renderItem(itemType) {
     case 'document':
       return DocumentItem()
       break
-    default:
+    case 'task':
       return TaskItem()
       break
   }
