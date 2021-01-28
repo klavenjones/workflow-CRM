@@ -221,26 +221,26 @@ function TaskItem(task) {
   )
 }
 
-function renderItem(itemType) {
+function renderItem(itemType, data) {
   switch (itemType) {
     case 'client':
-      return ClientListItem()
+      return ClientListItem(data)
       break
     case 'invoice':
-      return InvoiceListItem()
+      return InvoiceListItem(data)
       break
     case 'project':
-      return ProjectListItem()
+      return ProjectListItem(data)
       break
     case 'document':
-      return DocumentItem()
+      return DocumentItem(data)
       break
     case 'task':
-      return TaskItem()
+      return TaskItem(data)
       break
   }
 }
 
-export default function ListItem({ item }) {
-  return <>{renderItem(item)}</>
+export default function ListItem({ type, data }) {
+  return <>{renderItem(type, data)}</>
 }

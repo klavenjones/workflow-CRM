@@ -83,7 +83,6 @@ function Invoices({ session }) {
 
         {/* Invoice List */}
         <div>
-          {/* This example requires Tailwind CSS v2.0+ */}
           <div>
             <ul className='mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-1 lg:grid-cols-1'>
               <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
