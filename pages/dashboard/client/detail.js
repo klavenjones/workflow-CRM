@@ -44,13 +44,13 @@ function Client({ session }) {
               <h1 className='text-2xl lg:text-4xl font-bold text-gray-900'>
                 Ricardo Cooper
               </h1>
-              <p className='text-sm font-medium lg:text-lg text-gray-500'>
+              {/* <p className='text-sm font-medium lg:text-lg text-gray-500'>
                 Applied for{' '}
                 <a href='#' className='text-gray-900'>
                   Front End Developer
                 </a>{' '}
                 on <time dateTime='2020-08-25'>August 25, 2020</time>
-              </p>
+              </p> */}
             </div>
           </div>
           <div className='mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3'>
