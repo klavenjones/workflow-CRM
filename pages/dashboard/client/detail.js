@@ -23,7 +23,7 @@ function Client({ session }) {
     return (
       <SideNav page='clients'>
         {/* Section title */}
-
+        
         {/* Client Info */}
         <div className='pb-5 mt-14 mb-10 border-b border-gray-200 sm:flex sm:items-center sm:justify-between'>
           <div className='flex items-center space-x-5'>

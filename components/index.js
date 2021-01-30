@@ -19,6 +19,8 @@ import NoteCard from './cards/notes'
 import DocumentCard from './cards/documents'
 import ClientCard from './cards/clients'
 import SectionHeader from './sectionheader'
+import ListComponent from './listitems/listcomponent'
+import ListItem from './listitems/listitem'
 import { Success, Error } from './toast'
 
 export {
@@ -45,4 +47,6 @@ export {
   DocumentCard,
   ClientCard,
   SectionHeader,
+  ListItem,
+  ListComponent,
 }

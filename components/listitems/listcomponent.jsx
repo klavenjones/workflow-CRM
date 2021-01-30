@@ -38,5 +38,5 @@ function renderList(data, type) {
 }
 
 export default function ListComponent({ data, listType }) {
-  return <div>{renderList(data, listType)}</div>
+  return <>{renderList(data, listType)}</>
 }

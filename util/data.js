@@ -1,6 +1,25 @@
 let date = new Date()
 
-export const Clients = [
+export const Items = [
+  {
+    name: 'Web Design',
+    cost: 500,
+  },
+  {
+    name: 'Web Development',
+    cost: 1000,
+  },
+  {
+    name: 'Redesign',
+    cost: 500,
+  },
+  {
+    name: 'Landing Page',
+    cost: 500,
+  },
+]
+
+export const Client = [
   {
     firstname: 'Klaven',
     lastname: 'Jones',
@@ -140,25 +159,6 @@ export const Invoices = [
     due: new Date(),
     client: 'Johnny',
     items: [...Items],
-  },
-]
-
-export const Items = [
-  {
-    name: 'Web Design',
-    cost: 500,
-  },
-  {
-    name: 'Web Development',
-    cost: 1000,
-  },
-  {
-    name: 'Redesign',
-    cost: 500,
-  },
-  {
-    name: 'Landing Page',
-    cost: 500,
   },
 ]
 

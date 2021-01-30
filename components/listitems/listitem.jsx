@@ -1,18 +1,13 @@
 import React from 'react'
-import {
-  HiFolder,
-  HiPaperClip,
-  HiCalendar,
-  HiCash,
-  HiCalendar,
-} from 'react-icons/hi'
+import Link from 'next/link'
+import { HiFolder, HiPaperClip, HiCalendar, HiCash } from 'react-icons/hi'
 import { BsPersonFill } from 'react-icons/bs'
 import { BiDollarCircle } from 'react-icons/bi'
 import { DropDownMenu } from '../'
 
 function ClientListItem(client) {
   return (
-    <div className='relative rounded-lg border border-gray-300 bg-white px-6 py-0 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
+    <div className='relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
       {/* Client Avatar */}
       <div className='flex-shrink-0'>
         <img
@@ -29,10 +24,10 @@ function ClientListItem(client) {
             <a href='#' className='focus:outline-none'>
               <span className='absolute inset-0' aria-hidden='true' />
               <p className='text-sm font-medium text-gray-900'>
-                Leslie Alexander
+                {`${client.firstname} ${client.lastname}`}
               </p>
               <p className='text-sm text-gray-500 truncate'>
-                LesAlex@email.com
+                {`${client.email}`}
               </p>
             </a>
           </div>
