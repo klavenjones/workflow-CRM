@@ -1,14 +1,12 @@
 import React from 'react'
 import nookies from 'nookies'
-import Link from 'next/link'
+import { Documents as DocumentData } from '../../util/data'
 
-import { SideNav, DropDownMenu, SectionHeader } from '../../components'
+import { SideNav, ListComponent, SectionHeader } from '../../components'
 import {
   HiSortAscending,
   HiOutlineChevronDown,
   HiOutlineSearch,
-  HiFolder,
-  HiPaperClip,
 } from 'react-icons/hi'
 
 import { BsPersonFill } from 'react-icons/bs'
@@ -84,119 +82,8 @@ function Documents({ session }) {
         <div>
           <ul className='mt-3 grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-2'>
             {/* LIST ITEM */}
-            <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-              <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md rounded-l-md'>
-                <Link href='/dashboard/invoice/detail'>
-                  <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
-                    <div className='flex-1 px-4 py-2 text-sm '>
-                      <div className='mb-2'>Proposal</div>
-                      <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-8'>
-                        <p className='flex items-center text-gray-400'>
-                          <HiFolder className='mr-1 text-lg' />
-                          <span>Website</span>
-                        </p>
-                        <p className='flex items-center text-gray-400'>
-                          <BsPersonFill className='mr-1' />
-                          <span>Leslie Alexander</span>
-                        </p>
-                        <p className='flex items-center text-gray-400'>
-                          <HiPaperClip className='mr-1' />
-                          <span>PDF</span>
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-                <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                  <DropDownMenu />
-                </div>
-              </div>
-            </li>
-            {/* LIST ITEM End */}
-            <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-              <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md rounded-l-md'>
-                <Link href='/dashboard/invoice/detail'>
-                  <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
-                    <div className='flex-1 px-4 py-2 text-sm '>
-                      <div className='mb-2'>Proposal</div>
-                      <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-8'>
-                        <p className='flex items-center text-gray-400'>
-                          <HiFolder className='mr-1 text-lg' />
-                          <span>Website</span>
-                        </p>
-                        <p className='flex items-center text-gray-400'>
-                          <BsPersonFill className='mr-1' />
-                          <span>Leslie Alexander</span>
-                        </p>
-                        <p className='flex items-center text-gray-400'>
-                          <HiPaperClip className='mr-1' />
-                          <span>PDF</span>
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-                <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                  <DropDownMenu />
-                </div>
-              </div>
-            </li>
-            <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-              <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md rounded-l-md'>
-                <Link href='/dashboard/invoice/detail'>
-                  <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
-                    <div className='flex-1 px-4 py-2 text-sm '>
-                      <div className='mb-2'>Proposal</div>
-                      <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-8'>
-                        <p className='flex items-center text-gray-400'>
-                          <HiFolder className='mr-1 text-lg' />
-                          <span>Website</span>
-                        </p>
-                        <p className='flex items-center text-gray-400'>
-                          <BsPersonFill className='mr-1' />
-                          <span>Leslie Alexander</span>
-                        </p>
-                        <p className='flex items-center text-gray-400'>
-                          <HiPaperClip className='mr-1' />
-                          <span>PDF</span>
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-                <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                  <DropDownMenu />
-                </div>
-              </div>
-            </li>
-            <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-              <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md rounded-l-md'>
-                <Link href='/dashboard/invoice/detail'>
-                  <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
-                    <div className='flex-1 px-4 py-2 text-sm '>
-                      <div className='mb-2'>Proposal</div>
-                      <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-8'>
-                        <p className='flex items-center text-gray-400'>
-                          <HiFolder className='mr-1 text-lg' />
-                          <span>Website</span>
-                        </p>
-                        <p className='flex items-center text-gray-400'>
-                          <BsPersonFill className='mr-1' />
-                          <span>Leslie Alexander</span>
-                        </p>
-                        <p className='flex items-center text-gray-400'>
-                          <HiPaperClip className='mr-1' />
-                          <span>PDF</span>
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </Link>
-                <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                  <DropDownMenu />
-                </div>
-              </div>
-            </li>
+            {/* List Items */}
+            <ListComponent data={DocumentData} listType='document' />
           </ul>
         </div>
       </SideNav>

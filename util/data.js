@@ -1,3 +1,5 @@
+import { format } from 'date-fns'
+
 let date = new Date()
 
 export const Items = [
@@ -52,7 +54,7 @@ export const Client = [
   },
   {
     firstname: 'Billy',
-    lastname: 'Jones',
+    lastname: 'Johnson',
     email: 'klay@email.com',
     phone: '555-555-5555',
     website: 'klavenjones.com',
@@ -67,7 +69,7 @@ export const Client = [
   },
   {
     firstname: 'Bri',
-    lastname: 'Jones',
+    lastname: 'Smith',
     email: 'klay@email.com',
     phone: '555-555-5555',
     website: 'klavenjones.com',
@@ -102,7 +104,7 @@ export const Projects = [
     title: 'Website',
     note:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    date: `${date.getMonth()}, ${date.getFullYear()}`,
+    date: format(new Date(2020, 0, 27), 'MMM, yyyy'),
     invoices: [],
     documents: [],
     tasks: [],
@@ -111,7 +113,7 @@ export const Projects = [
     title: 'Mobile Application',
     note:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    date: `${date.getMonth()}, ${date.getFullYear()}`,
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
     invoices: [],
     documents: [],
     tasks: [],
@@ -120,7 +122,16 @@ export const Projects = [
     title: 'Web Application',
     note:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    date: `${date.getMonth()}, ${date.getFullYear()}`,
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
+    invoices: [],
+    documents: [],
+    tasks: [],
+  },
+  {
+    title: 'Web Application and Mobile Application',
+    note:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
     invoices: [],
     documents: [],
     tasks: [],
@@ -131,32 +142,32 @@ export const Invoices = [
   {
     invoiceNum: 'INV0001',
     title: 'Website',
-    issued: new Date(),
-    due: new Date(),
+    issued: `${format(new Date(2020, 0, 27), 'MMM dd, yyyy')}`,
+    due: `${format(new Date(2020, 1, 27), 'MMM dd, yyyy')}`,
     client: 'Klaven',
     items: [],
   },
   {
     invoiceNum: 'INV0002',
     title: 'Website',
-    issued: new Date(),
-    due: new Date(),
+    issued: `${format(new Date(2020, 0, 27), 'MMM dd, yyyy')}`,
+    due: `${format(new Date(2020, 1, 27), 'MMM dd, yyyy')}`,
     client: 'Stephanie',
     items: [Items.slice(0, 1)],
   },
   {
     invoiceNum: 'INV0003',
     title: 'Website',
-    issued: new Date(),
-    due: new Date(),
+    issued: `${format(new Date(2020, 0, 27), 'MMM dd, yyyy')}`,
+    due: `${format(new Date(2020, 1, 27), 'MMM dd, yyyy')}`,
     client: 'Johnny',
     items: [Items.slice[(0, 1)]],
   },
   {
     invoiceNum: 'INV0004',
     title: 'Website',
-    issued: new Date(),
-    due: new Date(),
+    issued: `${format(new Date(2020, 0, 27), 'MMM dd, yyyy')}`,
+    due: `${format(new Date(2020, 1, 27), 'MMM dd, yyyy')}`,
     client: 'Johnny',
     items: [...Items],
   },
@@ -166,17 +177,17 @@ export const Activities = [
   {
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ',
-    date: new Date(),
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
   {
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ',
-    date: new Date(),
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
   {
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ',
-    date: new Date(),
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
 ]
 
@@ -188,7 +199,7 @@ export const Documents = [
     type: 'PDF',
   },
   {
-    title: 'Proposal',
+    title: 'Contract',
     project: 'Project Name',
     client: 'Client Name',
     type: 'PDF',
@@ -200,7 +211,7 @@ export const Documents = [
     type: 'Doc',
   },
   {
-    title: 'Proposal',
+    title: 'Contract',
     project: 'Project Name',
     client: 'Client Name',
     type: 'Doc',
@@ -212,24 +223,24 @@ export const Tasks = [
     title: 'Task Title',
     project: 'Project Title',
     client: 'Client Name',
-    date: new Date(),
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
   {
     title: 'Task Title',
     project: 'Project Title',
     client: 'Client Name',
-    date: new Date(),
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
   {
     title: 'Task Title',
     project: 'Project Title',
     client: 'Client Name',
-    date: new Date(),
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
   {
     title: 'Task Title',
     project: 'Project Title',
     client: 'Client Name',
-    date: new Date(),
+    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
 ]

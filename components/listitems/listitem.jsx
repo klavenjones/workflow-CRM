@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { HiFolder, HiPaperClip, HiCalendar, HiCash } from 'react-icons/hi'
 import { BsPersonFill } from 'react-icons/bs'
+import { FaFileInvoiceDollar } from 'react-icons/fa'
 import { BiDollarCircle } from 'react-icons/bi'
 import { DropDownMenu } from '../'
 
@@ -48,14 +49,14 @@ function ProjectListItem(project) {
       {/* <div className='flex-shrink-0 flex items-center justify-center w-16 bg-pink-600 text-white text-sm font-medium rounded-l-md'>
       GA
     </div> */}
-      <div className='flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md truncate'>
+      <div className='flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-md truncate'>
         <div className='flex-1 px-4 py-2 text-sm truncate'>
           <div className='mb-2 sm:mb-1'>
             <a
               href='#'
               className='text-gray-900 font-medium hover:text-gray-600'
             >
-              Project Title
+              {project.title}
             </a>
           </div>
           <div className='space-y-1 flex flex-col sm:flex-row'>
@@ -65,7 +66,7 @@ function ProjectListItem(project) {
             </p>
             <p className='flex items-center text-gray-500 mr-4'>
               <HiCalendar className='mr-1' />
-              <span>Jun 12, 2020</span>
+              <span>{project.date}</span>
             </p>
             <p className='flex items-center text-red-500 mr-4'>
               <FaFileInvoiceDollar className='mr-1' />
@@ -90,14 +91,14 @@ function InvoiceListItem(invoice) {
   return (
     <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
       <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
-        INV0001
+        {invoice.invoiceNum}
       </div>
 
       <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200  bg-white hover:bg-gray-100 rounded-r-md'>
         <Link href='/dashboard/invoice/detail'>
           <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
             <div className='flex-1 px-4 py-2 text-sm '>
-              <div className='mb-4'>Invoice Title</div>
+              <div className='mb-4'>{invoice.title}</div>
               <div className='flex flex-col justify-center md:grid md:grid-cols-6'>
                 {/* <p className='flex items-center text-gray-500 md:self-end'>
                             <HiCalendar className='mr-1' />
@@ -105,15 +106,15 @@ function InvoiceListItem(invoice) {
                           </p> */}
                 <p className='flex items-center text-gray-500 pr-0 mb-3 md:mb-0 md:pr-4 col-span-1'>
                   <BsPersonFill className='mr-1' />
-                  <span>Client Name</span>
+                  <span>{invoice.client}</span>
                 </p>
                 <p className='flex items-center text-gray-700 pr-0 mb-3 md:mb-0 md:pr-4  col-span-1'>
                   <HiCalendar className='mr-1' />
-                  <span>Jun 12, 2020</span>
+                  <span>{invoice.issued}</span>
                 </p>
                 <p className='flex items-center text-gray-400 pr-0 mb-3 md:mb-0 md:pr-4 col-span-1 '>
                   <HiCalendar className='mr-1' />
-                  <span>Jul 12, 2020</span>
+                  <span>{invoice.due}</span>
                 </p>
 
                 <p className='flex items-center text-red-500 pr-0 mb-3 md:mb-0 md:pr-3 col-span-1 '>
@@ -147,19 +148,19 @@ function DocumentItem(document) {
         <Link href='/dashboard/invoice/detail'>
           <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
             <div className='flex-1 px-4 py-2 text-sm '>
-              <div className='mb-2'>Proposal</div>
+              <div className='mb-2'>{document.title}</div>
               <div className='space-y-3 md:space-y-0 flex flex-col md:flex-row md:items-center md:space-x-8'>
                 <p className='flex items-center text-gray-400'>
                   <HiFolder className='mr-1 text-lg' />
-                  <span>Website</span>
+                  <span>{document.project}</span>
                 </p>
                 <p className='flex items-center text-gray-400'>
                   <BsPersonFill className='mr-1' />
-                  <span>Leslie Alexander</span>
+                  <span>{document.client}</span>
                 </p>
                 <p className='flex items-center text-gray-400'>
                   <HiPaperClip className='mr-1' />
-                  <span>PDF</span>
+                  <span>{document.type}</span>
                 </p>
               </div>
             </div>

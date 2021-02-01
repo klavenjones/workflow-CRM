@@ -1,8 +1,14 @@
 import React from 'react'
 import nookies from 'nookies'
-import Link from 'next/link'
+import { Invoices as InvoiceData } from '../../util/data'
 
-import { SideNav, DropDownMenu, SectionHeader } from '../../components'
+import {
+  SideNav,
+  DropDownMenu,
+  SectionHeader,
+  ListComponent,
+  InvoiceCard,
+} from '../../components'
 import {
   HiSortAscending,
   HiOutlineChevronDown,
@@ -85,102 +91,8 @@ function Invoices({ session }) {
         <div>
           <div>
             <ul className='mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-1 lg:grid-cols-1'>
-              <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-                <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
-                  INV0002
-                </div>
-                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200  bg-white hover:bg-gray-100 rounded-r-md'>
-                  <Link href='/dashboard/invoice/detail'>
-                    <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
-                      <div className='flex-1 px-4 py-2 text-sm '>
-                        <div className='mb-4'>Invoice Title</div>
-                        <div className='flex flex-col justify-center md:grid md:grid-cols-6'>
-                          {/* <p className='flex items-center text-gray-500 md:self-end'>
-                            <HiCalendar className='mr-1' />
-                            <span>Inv001</span>
-                          </p> */}
-                          <p className='flex items-center text-gray-500 pr-0 mb-3 md:mb-0 md:pr-4 col-span-1'>
-                            <BsPersonFill className='mr-1' />
-                            <span>Client Name</span>
-                          </p>
-                          <p className='flex items-center text-gray-700 pr-0 mb-3 md:mb-0 md:pr-4  col-span-1'>
-                            <HiCalendar className='mr-1' />
-                            <span>Jun 12, 2020</span>
-                          </p>
-                          <p className='flex items-center text-gray-400 pr-0 mb-3 md:mb-0 md:pr-4 col-span-1 '>
-                            <HiCalendar className='mr-1' />
-                            <span>Jul 12, 2020</span>
-                          </p>
-
-                          <p className='flex items-center text-red-500 pr-0 mb-3 md:mb-0 md:pr-2  col-span-1 '>
-                            <FaFileInvoiceDollar className='mr-1' />
-                            <span>$5000.00</span>
-                          </p>
-                          <p className='flex items-center text-green-500 pr-0 mb-3 md:mb-0 md:pr-2 col-span-1'>
-                            <BiDollarCircle className='mr-1' />
-                            <span>$5000.00</span>
-                          </p>
-                          <p className='flex items-center text-black pr-0 mb-3 md:mb-0 md:pr-2 col-span-1'>
-                            <HiCash className='mr-1' />
-                            <span>$5500.00</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </Link>
-                  <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                    <DropDownMenu />
-                  </div>
-                </div>
-              </li>
-              <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-                <div className='flex-shrink-0 flex items-center justify-center w-20 bg-gray-600 text-white text-sm font-medium rounded-l-md'>
-                  INV0003
-                </div>
-                <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200  bg-white hover:bg-gray-100 rounded-r-md'>
-                  <Link href='/dashboard/invoice/detail'>
-                    <a className='text-gray-900 font-medium hover:text-gray-600  inline-block'>
-                      <div className='flex-1 px-4 py-2 text-sm '>
-                        <div className='mb-2'>Invoice Title</div>
-                        <div className='space-y-3 lg:space-y-0 flex flex-col lg:flex-row lg:items-center lg:space-x-12'>
-                          {/* <p className='flex items-center text-gray-500 md:self-end'>
-                            <HiCalendar className='mr-1' />
-                            <span>Inv001</span>
-                          </p> */}
-                          <p className='flex items-center text-gray-500'>
-                            <BsPersonFill className='mr-1' />
-                            <span>Client Name</span>
-                          </p>
-                          <p className='flex items-center text-gray-700'>
-                            <HiCalendar className='mr-1' />
-                            <span>Jun 12, 2020</span>
-                          </p>
-                          <p className='flex items-center text-gray-400'>
-                            <HiCalendar className='mr-1' />
-                            <span>Jul 12, 2020</span>
-                          </p>
-
-                          <p className='flex items-center text-red-500'>
-                            <FaFileInvoiceDollar className='mr-1' />
-                            <span>$500</span>
-                          </p>
-                          <p className='flex items-center text-green-500'>
-                            <BiDollarCircle className='mr-1' />
-                            <span>$5000</span>
-                          </p>
-                          <p className='flex items-center text-black'>
-                            <HiCash className='mr-1' />
-                            <span>$5500</span>
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </Link>
-                  <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                    <DropDownMenu />
-                  </div>
-                </div>
-              </li>
+              {/* List Items */}
+              <ListComponent data={InvoiceData} listType='invoice' />
             </ul>
           </div>
         </div>
