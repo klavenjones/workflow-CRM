@@ -2,19 +2,19 @@ import React from 'react'
 import { ListItem } from '../'
 
 function DocumentList(data) {
-  return data.map((item, i) => <ListItem type='document' data={item} />)
+  return data.map((item, i) => <ListItem key={i} type='document' data={item} />)
 }
 function ProjectList(data) {
-  return data.map((item, i) => <ListItem type='project' data={item} />)
+  return data.map((item, i) => <ListItem key={i} type='project' data={item} />)
 }
 function InvoiceList(data) {
-  return data.map((item, i) => <ListItem type='invoice' data={item} />)
+  return data.map((item, i) => <ListItem key={i} type='invoice' data={item} />)
 }
 function ClientList(data) {
-  return data.map((item, i) => <ListItem type='client' data={item} />)
+  return data.map((item, i) => <ListItem key={i} type='client' data={item} />)
 }
 function TaskList(data) {
-  return data.map((item, i) => <ListItem type='task' data={item} />)
+  return data.map((item, i) => <ListItem key={i} type='task' data={item} />)
 }
 
 function renderList(data, type) {

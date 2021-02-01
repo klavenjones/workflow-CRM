@@ -1,18 +1,15 @@
 import React from 'react'
 import nookies from 'nookies'
-import Link from 'next/link'
+import { Tasks as TaskData } from '../../util/data'
 import {
   HiSortAscending,
   HiOutlineChevronDown,
   HiOutlineSearch,
-  HiCalendar,
-  HiFolder,
-  HiPaperClip,
 } from 'react-icons/hi'
 
 import { BsPersonFill } from 'react-icons/bs'
 
-import { SideNav, DropDownMenu, SectionHeader } from '../../components'
+import { SideNav, ListComponent, SectionHeader } from '../../components'
 
 import { verifyIdToken } from '../../util/firebase/firebaseAdmin'
 import firebaseClient from '../../util/firebase/firebaseClient'
@@ -84,158 +81,8 @@ function Tasks({ session }) {
         {/* Task List */}
         <ul className='mt-3 grid grid-cols-1 gap-5 sm:gap-6'>
           {/* Task Item */}
-          <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-            <div className='flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-md border-t border-l border-b  border-gray-200'>
-              <input
-                type='checkbox'
-                name='task'
-                id='task'
-                className='h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded'
-              />
-            </div>
-            <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md'>
-              <Link href='/dashboard/invoice/detail'>
-                <a className='text-gray-900 font-medium hover:text-gray-600  inline-block w-full'>
-                  <div className='flex flex-col justify-center md:pr-6 md:grid md:grid-cols-8 pt-2'>
-                    <div className='mb-2 items-center col-span-1'>
-                      <p className='text-sm font-medium'>Task Title</p>
-                    </div>
-                    <div className='flex space-x-4 mb-2 col-span-6'>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <HiFolder className='mr-1' />
-                        <span>Project Title</span>
-                      </p>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <BsPersonFill className='mr-1' />
-                        <span>Client</span>
-                      </p>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <HiCalendar className='mr-1' />
-                        <span>Feb 20, 2021</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </Link>
-              <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                <DropDownMenu />
-              </div>
-            </div>
-          </li>
-          <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-            <div className='flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-md border-t border-l border-b  border-gray-200'>
-              <input
-                type='checkbox'
-                name='task'
-                id='task'
-                className='h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded'
-              />
-            </div>
-            <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md'>
-              <Link href='/dashboard/invoice/detail'>
-                <a className='text-gray-900 font-medium hover:text-gray-600  inline-block w-full'>
-                  <div className='flex flex-col justify-center md:pr-6 md:grid md:grid-cols-8 pt-2'>
-                    <div className='mb-2 items-center col-span-1'>
-                      <p className='text-sm font-medium'>Task Title</p>
-                    </div>
-                    <div className='flex space-x-4 mb-2 col-span-6'>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <HiFolder className='mr-1' />
-                        <span>Project Title</span>
-                      </p>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <BsPersonFill className='mr-1' />
-                        <span>Client</span>
-                      </p>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <HiCalendar className='mr-1' />
-                        <span>Feb 20, 2021</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </Link>
-              <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                <DropDownMenu />
-              </div>
-            </div>
-          </li>
-          <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-            <div className='flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-md border-t border-l border-b  border-gray-200'>
-              <input
-                type='checkbox'
-                name='task'
-                id='task'
-                className='h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded'
-              />
-            </div>
-            <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md'>
-              <Link href='/dashboard/invoice/detail'>
-                <a className='text-gray-900 font-medium hover:text-gray-600  inline-block w-full'>
-                  <div className='flex flex-col justify-center md:pr-6 md:grid md:grid-cols-8 pt-2'>
-                    <div className='mb-2 items-center col-span-1'>
-                      <p className='text-sm font-medium'>Task Title</p>
-                    </div>
-                    <div className='flex space-x-4 mb-2 col-span-6'>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <HiFolder className='mr-1' />
-                        <span>Project Title</span>
-                      </p>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <BsPersonFill className='mr-1' />
-                        <span>Client</span>
-                      </p>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <HiCalendar className='mr-1' />
-                        <span>Feb 20, 2021</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </Link>
-              <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                <DropDownMenu />
-              </div>
-            </div>
-          </li>
-          <li className='col-span-1 flex shadow-sm rounded-md relative hover:bg-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500'>
-            <div className='flex-shrink-0 flex items-center justify-center w-16 bg-white text-white text-sm font-medium rounded-l-md border-t border-l border-b  border-gray-200'>
-              <input
-                type='checkbox'
-                name='task'
-                id='task'
-                className='h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded'
-              />
-            </div>
-            <div className='flex-1 flex items-center justify-between py-2 border-t border-r border-b border-gray-200 bg-white hover:bg-gray-100 rounded-r-md'>
-              <Link href='/dashboard/invoice/detail'>
-                <a className='text-gray-900 font-medium hover:text-gray-600  inline-block w-full'>
-                  <div className='flex flex-col justify-center md:pr-6 md:grid md:grid-cols-8 pt-2'>
-                    <div className='mb-2 items-center col-span-1'>
-                      <p className='text-sm font-medium'>Task Title</p>
-                    </div>
-                    <div className='flex space-x-4 mb-2 col-span-6'>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <HiFolder className='mr-1' />
-                        <span>Project Title</span>
-                      </p>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <BsPersonFill className='mr-1' />
-                        <span>Client</span>
-                      </p>
-                      <p className='flex items-center text-xs text-gray-400'>
-                        <HiCalendar className='mr-1' />
-                        <span>Feb 20, 2021</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </Link>
-              <div className='flex-shrink-0 pr-4 cursor-pointer'>
-                <DropDownMenu />
-              </div>
-            </div>
-          </li>
+          {/* List Items */}
+          <ListComponent data={TaskData} listType='task' />
         </ul>
       </SideNav>
     )

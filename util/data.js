@@ -220,27 +220,31 @@ export const Documents = [
 
 export const Tasks = [
   {
-    title: 'Task Title',
+    title: 'Task Title 1',
     project: 'Project Title',
     client: 'Client Name',
+    completed: false,
     date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
   {
-    title: 'Task Title',
+    title: 'Task Title 2',
     project: 'Project Title',
     client: 'Client Name',
+    completed: false,
     date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
   {
-    title: 'Task Title',
+    title: 'Task Title 3',
     project: 'Project Title',
     client: 'Client Name',
+    completed: false,
     date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
   {
-    title: 'Task Title',
+    title: 'Task Title 4',
     project: 'Project Title',
     client: 'Client Name',
+    completed: false,
     date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
   },
 ]
