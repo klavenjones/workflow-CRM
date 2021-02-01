@@ -16,6 +16,9 @@ function ClientList(data) {
 function TaskList(data) {
   return data.map((item, i) => <ListItem key={i} type='task' data={item} />)
 }
+function ActivityList(data) {
+  return data.map((item, i) => <ListItem key={i} type='activity' data={item} />)
+}
 
 function renderList(data, type) {
   switch (type) {
@@ -33,6 +36,9 @@ function renderList(data, type) {
       break
     case 'task':
       return TaskList(data)
+      break
+    case 'activity':
+      return ActivityList(data)
       break
   }
 }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { HiFolder, HiPaperClip, HiCalendar, HiCash } from 'react-icons/hi'
 import { BsPersonFill } from 'react-icons/bs'
 import { FaFileInvoiceDollar } from 'react-icons/fa'
-import { BiDollarCircle } from 'react-icons/bi'
+import { BiDollarCircle, BiCheck } from 'react-icons/bi'
 import { DropDownMenu } from '../'
 
 function ClientListItem(client) {
@@ -219,6 +219,36 @@ function TaskItem(task) {
   )
 }
 
+function ActivityItem(activity) {
+  return (
+    <li>
+      <div className='relative pb-8'>
+        <div className='relative flex space-x-3'>
+          <div>
+            <span className='h-8 w-8 rounded-full bg-green-400 flex items-center justify-center ring-8 ring-white text-white'>
+              {/* Heroicon name: user */}
+              <BiCheck size='1.75em' />
+            </span>
+          </div>
+          <div className='min-w-0 flex-1 pt-1.5 flex justify-between space-x-4'>
+            <div>
+              <p className='text-sm text-gray-500'>
+                {activity.description}{' '}
+                <a href='#' className='font-medium text-gray-900'>
+                  Action Link
+                </a>
+              </p>
+            </div>
+            <div className='text-right text-sm whitespace-nowrap text-gray-500'>
+              <time dateTime='2020-09-20'>{activity.date}</time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  )
+}
+
 function renderItem(itemType, data) {
   switch (itemType) {
     case 'client':
@@ -235,6 +265,9 @@ function renderItem(itemType, data) {
       break
     case 'task':
       return TaskItem(data)
+      break
+    case 'activity':
+      return ActivityItem(data)
       break
   }
 }

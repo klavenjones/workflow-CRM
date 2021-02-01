@@ -176,18 +176,18 @@ export const Invoices = [
 export const Activities = [
   {
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ',
-    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+    date: `${format(new Date(2020, 0, 27), 'MMM dd')}`,
   },
   {
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ',
-    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun',
+    date: `${format(new Date(2020, 0, 27), 'MMM dd')}`,
   },
   {
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ',
-    date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+    date: `${format(new Date(2020, 0, 27), 'MMM dd')}`,
   },
 ]
 
