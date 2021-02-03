@@ -1,6 +1,5 @@
 import React from 'react'
 import { Activities as ActivityData } from '../../util/data'
-import { BiCheck } from 'react-icons/bi'
 import { ListComponent } from '../'
 
 export default function ActivityCard() {

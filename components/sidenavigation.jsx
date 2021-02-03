@@ -344,7 +344,7 @@ export default function SideNav({ children, page, pageTitle }) {
         </div>
 
         {/* Static sidebar for desktop */}
-        <div className='hidden lg:flex lg:flex-shrink-0 relative'>
+        <div className='hidden lg:flex lg:flex-shrink-0 relative z-20'>
           <div className='flex flex-col w-64'>
             {/* Sidebar component, swap this element with another sidebar if you like */}
             <div className='flex flex-col h-0 flex-1 bg-gray-800'>
@@ -660,7 +660,7 @@ export default function SideNav({ children, page, pageTitle }) {
             </button>
           </div>
           <main
-            className={`flex-1 relative overflow-y-auto focus:outline-none z-0`}
+            className={`flex-1 relative overflow-y-auto z-0 focus:outline-none`}
             tabIndex={0}
           >
             <div className='py-6'>

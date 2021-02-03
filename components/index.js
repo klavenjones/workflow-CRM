@@ -10,6 +10,7 @@ import SideNav from './sidenavigation.jsx'
 import Login from './login.jsx'
 import Register from './register.jsx'
 import Footer from './footer.jsx'
+import Modal from './modal.jsx'
 import ProjectCard from './cards/projects'
 import TaskCard from './cards/tasks'
 import InvoiceCard from './cards/invoice'
@@ -49,4 +50,5 @@ export {
   SectionHeader,
   ListItem,
   ListComponent,
+  Modal,
 }
