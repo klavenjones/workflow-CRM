@@ -15,7 +15,7 @@ function Dashboard({ session }) {
   if (session) {
     return (
       <>
-        <Modal  show/>
+        <Modal show/>
         <SideNav page='dashboard'>
           {/* PAGE HEADER */}
           <div className='flex flex-col'>
