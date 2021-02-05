@@ -1,6 +1,7 @@
 import Hero from './hero.jsx'
 import Features from './features.jsx'
 import Layout from './layout.jsx'
+
 import CTA from './callToAction.jsx'
 import Stats from './stats.jsx'
 import Navigation from './navigation.jsx'
