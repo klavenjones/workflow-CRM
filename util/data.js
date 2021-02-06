@@ -23,8 +23,7 @@ export const Items = [
 
 export const Client = [
   {
-    firstname: 'Klaven',
-    lastname: 'Jones',
+    name: 'Klaven Jones',
     email: 'klay@email.com',
     phone: '555-555-5555',
     website: 'klavenjones.com',
@@ -38,8 +37,7 @@ export const Client = [
       'https://images.unsplash.com/photo-1611817757571-75fe5c08ffd9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
   },
   {
-    firstname: 'Johnny',
-    lastname: 'Jackson',
+    name: 'Johnny Jackson',
     email: 'klay@email.com',
     phone: '555-555-5555',
     website: 'klavenjones.com',
@@ -53,8 +51,7 @@ export const Client = [
       'https://images.unsplash.com/photo-1611817757571-75fe5c08ffd9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
   },
   {
-    firstname: 'Billy',
-    lastname: 'Johnson',
+    name: 'Billy Johnson',
     email: 'klay@email.com',
     phone: '555-555-5555',
     website: 'klavenjones.com',
@@ -68,8 +65,7 @@ export const Client = [
       'https://images.unsplash.com/photo-1611817757571-75fe5c08ffd9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
   },
   {
-    firstname: 'Bri',
-    lastname: 'Smith',
+    name: 'Bri Smith',
     email: 'klay@email.com',
     phone: '555-555-5555',
     website: 'klavenjones.com',
@@ -83,8 +79,7 @@ export const Client = [
       'https://images.unsplash.com/photo-1505499663565-1ec2a8397f5b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=702&q=80',
   },
   {
-    firstname: 'Stephanie',
-    lastname: 'Jones',
+    name: 'Stephanie Jones',
     email: 'klay@email.com',
     phone: '555-555-5555',
     website: 'klavenjones.com',
@@ -101,7 +96,7 @@ export const Client = [
 
 export const Projects = [
   {
-    title: 'Website',
+    name: 'Website',
     note:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     date: format(new Date(2020, 0, 27), 'MMM, yyyy'),
@@ -110,7 +105,7 @@ export const Projects = [
     tasks: [],
   },
   {
-    title: 'Mobile Application',
+    name: 'Mobile Application',
     note:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
@@ -119,7 +114,7 @@ export const Projects = [
     tasks: [],
   },
   {
-    title: 'Web Application',
+    name: 'Web Application',
     note:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
@@ -128,7 +123,7 @@ export const Projects = [
     tasks: [],
   },
   {
-    title: 'Web Application and Mobile Application',
+    name: 'Web Application and Mobile Application',
     note:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     date: `${format(new Date(2020, 0, 27), 'MMM, yyyy')}`,
