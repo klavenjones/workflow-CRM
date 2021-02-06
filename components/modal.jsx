@@ -4,7 +4,7 @@ import { FaChevronDown } from 'react-icons/fa'
 
 import { Client, Projects } from '../util/data'
 
-function NewClientForm() {
+function NewClientInvoiceForm() {
   return (
     <>
       {' '}
@@ -101,16 +101,8 @@ function ExistingProjectForm() {
   return (
     <>
       {' '}
-      <div className='mt-6'>
-        <label
-          htmlFor='name'
-          className='block text-gray-400 text-sm uppercase tracking-wider'
-        >
-          Project
-        </label>
-        <div className='mt-3'>
-          <NewProjectForm />
-        </div>
+      <div className='mt-3'>
+        <NewProjectForm />
       </div>
     </>
   )
@@ -131,7 +123,7 @@ function ClientMenu({ label, id, type }) {
         <FormDropDown data={Client} type='+ New Client' handleForm={setForm} />
         {newForm ? (
           /* New Client Form */
-          <NewClientForm />
+          <NewClientInvoiceForm />
         ) : type === 'new project' ? (
           <ExistingProjectForm />
         ) : (
