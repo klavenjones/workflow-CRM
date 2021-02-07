@@ -1,8 +1,8 @@
 import React from 'react'
-import { FaPlus, FaCalendar} from 'react-icons/fa'
+import { FaPlus, FaCalendar } from 'react-icons/fa'
 import { DropDownMenu } from '../'
 
-export default function ProjectCard() {
+export default function ProjectCard({ handleModal, modalType }) {
   return (
     <div className='bg-white overflow-visible shadow rounded-lg mb-6 relative'>
       <div className='bg-white px-4 py-4 border-b border-gray-200 rounded-t-lg rounded-b-none sm:px-6'>
@@ -14,6 +14,10 @@ export default function ProjectCard() {
           </div>
           <div className='ml-4 mt-2 flex-shrink-0'>
             <button
+              onClick={() => {
+                modalType('project')
+                handleModal(true)
+              }}
               type='button'
               className='relative inline-flex items-center px-2 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
             >

@@ -4,6 +4,105 @@ import { FaChevronDown } from 'react-icons/fa'
 
 import { Client, Projects } from '../util/data'
 
+function FormDropDown({ data, handleForm, type }) {
+  const [show, setShow] = React.useState(false)
+  const [selected, setSelected] = React.useState(type)
+  const [value, setValue] = React.useState(type)
+
+  React.useEffect(() => {
+    handleForm && handleForm(selected === type)
+  }, [selected])
+
+  return (
+    <>
+      <button
+        type='button'
+        id={type}
+        onClick={() => setShow(!show)}
+        aria-haspopup='listbox'
+        aria-expanded='true'
+        aria-labelledby='listbox-label'
+        className='bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
+      >
+        <span className='block truncate'>{value}</span>
+        <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
+          <FaChevronDown
+            className={`text-gray-400 transition-all ease-in duration-100 transform ${
+              show ? 'rotate-180' : 'rotate-0'
+            }`}
+          />
+        </span>
+      </button>
+      <div
+        className={`absolute mt-1 w-full rounded-md bg-white shadow-lg transition ease-in duration-100 z-10 ${
+          show ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+      >
+        <ul
+          tabIndex={-1}
+          role='listbox'
+          aria-labelledby='listbox-label'
+          aria-activedescendant='listbox-item-3'
+          className='max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm'
+        >
+          <li
+            id='listbox-option-new'
+            role='option'
+            className={`text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-indigo-600 hover:text-white ${
+              selected === `${type}` ? 'bg-indigo-100' : 'bg-white'
+            }`}
+          >
+            <span
+              data-name={`${type}`}
+              onClick={(e) => {
+                setValue(e.target.innerHTML)
+                setSelected(e.target.getAttribute('data-name'))
+                setShow(!show)
+              }}
+              className={`block truncate ${
+                selected === `${type}` ? 'font-semibold' : 'font-normal'
+              }`}
+            >
+              {type}
+            </span>
+          </li>
+          {data.map((item, i) => {
+            return (
+              <li
+                key={i}
+                data-name={`${item.name}`}
+                id={`listbox-option-${i}`}
+                role='option'
+                className={`text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-indigo-600 hover:text-white ${
+                  selected === `listbox-option-${i}`
+                    ? 'bg-indigo-100'
+                    : 'bg-white'
+                }`}
+              >
+                <span
+                  data-name={`listbox-option-${i}`}
+                  onClick={(e) => {
+                    setValue(e.target.innerHTML)
+                    setSelected(e.target.getAttribute('data-name'))
+                    setShow(!show)
+                  }}
+                  className={`block truncate ${
+                    selected === `listbox-option-${i}`
+                      ? 'font-semibold'
+                      : 'font-normal'
+                  }`}
+                >
+                  {item.name}
+                </span>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    </>
+  )
+}
+
 function NewClientInvoiceForm() {
   return (
     <>
@@ -97,6 +196,7 @@ function ExistingClientForm() {
     </>
   )
 }
+
 function ExistingProjectForm() {
   return (
     <>
@@ -130,105 +230,6 @@ function ClientMenu({ label, id, type }) {
           /* Existing Client Form */
           <ExistingClientForm />
         )}
-      </div>
-    </>
-  )
-}
-
-function FormDropDown({ data, handleForm, type }) {
-  const [show, setShow] = React.useState(false)
-  const [selected, setSelected] = React.useState(type)
-  const [value, setValue] = React.useState(type)
-
-  React.useEffect(() => {
-    handleForm(selected === type)
-  }, [selected])
-
-  return (
-    <>
-      <button
-        type='button'
-        id={type}
-        onClick={() => setShow(!show)}
-        aria-haspopup='listbox'
-        aria-expanded='true'
-        aria-labelledby='listbox-label'
-        className='bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
-      >
-        <span className='block truncate'>{value}</span>
-        <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
-          <FaChevronDown
-            className={`text-gray-400 transition-all ease-in duration-100 transform ${
-              show ? 'rotate-180' : 'rotate-0'
-            }`}
-          />
-        </span>
-      </button>
-      <div
-        className={`absolute mt-1 w-full rounded-md bg-white shadow-lg transition ease-in duration-100 z-10 ${
-          show ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
-      >
-        <ul
-          tabIndex={-1}
-          role='listbox'
-          aria-labelledby='listbox-label'
-          aria-activedescendant='listbox-item-3'
-          className='max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm'
-        >
-          <li
-            id='listbox-option-new'
-            role='option'
-            className={`text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-indigo-600 hover:text-white ${
-              selected === `${type}` ? 'bg-indigo-100' : 'bg-white'
-            }`}
-          >
-            <span
-              data-name={`${type}`}
-              onClick={(e) => {
-                setValue(e.target.innerHTML)
-                setSelected(e.target.getAttribute('data-name'))
-                setShow(!show)
-              }}
-              className={`block truncate ${
-                selected === `${type}` ? 'font-semibold' : 'font-normal'
-              }`}
-            >
-              {type}
-            </span>
-          </li>
-          {data.map((item, i) => {
-            return (
-              <li
-                key={i}
-                data-name={`${item.name}`}
-                id={`listbox-option-${i}`}
-                role='option'
-                className={`text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-indigo-600 hover:text-white ${
-                  selected === `listbox-option-${i}`
-                    ? 'bg-indigo-100'
-                    : 'bg-white'
-                }`}
-              >
-                <span
-                  data-name={`listbox-option-${i}`}
-                  onClick={(e) => {
-                    setValue(e.target.innerHTML)
-                    setSelected(e.target.getAttribute('data-name'))
-                    setShow(!show)
-                  }}
-                  className={`block truncate ${
-                    selected === `listbox-option-${i}`
-                      ? 'font-semibold'
-                      : 'font-normal'
-                  }`}
-                >
-                  {item.name}
-                </span>
-              </li>
-            )
-          })}
-        </ul>
       </div>
     </>
   )
@@ -288,6 +289,187 @@ function ProjectModal() {
   )
 }
 
+function TaskModal() {
+  return (
+    <>
+      <div>
+        {/* Modal Title */}
+        <div className='mx-auto flex items-center justify-center py-10 mb-10 border-b border-gray-200'>
+          <h1 className='text-2xl'>Create New Task</h1>
+        </div>
+
+        {/* Modal Form */}
+        <div className='mt-3 sm:mt-5 px-4 sm:px-6'>
+          <div className='mt-6'>
+            <label
+              htmlFor='name'
+              className='block text-gray-400 text-sm uppercase tracking-wider'
+            >
+              Title
+            </label>
+            <div className='mt-3'>
+              <input
+                type='text'
+                name='name'
+                id='name'
+                className='shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                placeholder='Jane Smith'
+              />
+            </div>
+          </div>
+          <div className='mt-6'>
+            <label
+              htmlFor='name'
+              className='block text-gray-400 text-sm uppercase tracking-wider'
+            >
+              Description
+            </label>
+            <div className='mt-3'>
+              <textarea
+                type='text'
+                name='name'
+                id='name'
+                className='shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                placeholder='Add A Description'
+              ></textarea>
+            </div>
+          </div>
+          <div className='mt-6'>
+            <div className='grid gap-4 grid-cols-1 sm:grid-cols-2'>
+              <div className='col-span-2'>
+                <label
+                  htmlFor='name'
+                  className='block text-gray-400 text-sm uppercase tracking-wider'
+                >
+                  Project
+                </label>
+                <div className='mt-3'>
+                  <FormDropDown data={Projects} type='Select Project' />
+                </div>
+              </div>
+              <div className='col-span-1'>
+                <label
+                  htmlFor='name'
+                  className='block text-gray-400 text-sm uppercase tracking-wider'
+                >
+                  Due Date
+                </label>
+                <div className='mt-3'>
+                  <input
+                    type='date'
+                    name='name'
+                    id='name'
+                    className='shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                    placeholder='Jane Smith'
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-5 mx-auto flex items-center justify-center py-10 px-4 border-t border-gray-200 sm:mt-6 sm:p-4'>
+          <button
+            type='button'
+            className='inline-flex justify-center w-full rounded-sm border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base text-white tracking-widest uppercase hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm'
+          >
+            Create Task
+          </button>
+        </div>
+      </div>
+    </>
+  )
+}
+function DocumentModal() {
+  return (
+    <>
+      <div>
+        {/* Modal Title */}
+        <div className='mx-auto flex items-center justify-center py-10 mb-10 border-b border-gray-200'>
+          <h1 className='text-2xl'>Upload A Document</h1>
+        </div>
+
+        {/* Modal Form */}
+        <div className='mt-3 sm:mt-5 px-4 sm:px-6'>
+          <div className='mt-6'>
+            <label
+              htmlFor='name'
+              className='block text-gray-400 text-sm uppercase tracking-wider'
+            >
+              Document Title
+            </label>
+            <div className='mt-3'>
+              <input
+                type='text'
+                name='name'
+                id='name'
+                className='shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                placeholder='Proposal'
+              />
+            </div>
+          </div>
+
+          <div className='mt-6'>
+            <div className='grid gap-4 grid-cols-1 sm:grid-cols-2'>
+              <div className='col-span-2'>
+                <label
+                  htmlFor='name'
+                  className='block text-gray-400 text-sm uppercase tracking-wider'
+                >
+                  Project
+                </label>
+                <div className='mt-3'>
+                  <FormDropDown data={Projects} type='Select Project' />
+                </div>
+              </div>
+              <div className='col-span-1'>
+                <label
+                  htmlFor='name'
+                  className='block text-gray-400 text-sm uppercase tracking-wider'
+                >
+                  Upload Document
+                </label>
+                <div className='mt-3'>
+                  <input
+                    type='file'
+                    name='name'
+                    id='name'
+                    className='shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                    placeholder='Jane Smith'
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-5 mx-auto flex items-center justify-center py-10 px-4 border-t border-gray-200 sm:mt-6 sm:p-4'>
+          <button
+            type='button'
+            className='inline-flex justify-center w-full rounded-sm border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base text-white tracking-widest uppercase hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm'
+          >
+            Upload Document
+          </button>
+        </div>
+      </div>
+    </>
+  )
+}
+
+function renderModalForm(type) {
+  switch (type) {
+    case 'task':
+      return <TaskModal />
+      break
+    case 'project':
+      return <ProjectModal />
+      break
+    case 'invoice':
+      return <InvoiceModal />
+      break
+  }
+}
+
 export default function Modal({ show, type, handleModal }) {
   return (
     <>
@@ -335,7 +517,7 @@ export default function Modal({ show, type, handleModal }) {
             >
               <IoClose />
             </button>
-            <ProjectModal />
+            {renderModalForm(type)}
           </div>
         </div>
       </div>

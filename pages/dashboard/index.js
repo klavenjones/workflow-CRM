@@ -10,12 +10,13 @@ import ActivityCard from '../../components/cards/activities'
 
 function Dashboard({ session }) {
   firebaseClient()
-  const [showMenu, setShow] = React.useState(true)
-  console.log("DASH", showMenu)
+  const [showMenu, setShow] = React.useState(false)
+  const [modalType, setType] = React.useState('')
+
   if (session) {
     return (
       <>
-        <Modal handleModal={setShow} show={showMenu} />
+        <Modal handleModal={setShow} show={showMenu} type={modalType} />
         <SideNav page='dashboard'>
           {/* PAGE HEADER */}
           <div className='flex flex-col'>
@@ -26,13 +27,20 @@ function Dashboard({ session }) {
               <div className='mt-3 flex sm:mt-0 sm:ml-4'>
                 <button
                   type='button'
-                  onClick={() => setShow(true)}
+                  onClick={() => {
+                    setType('project')
+                    setShow(true)
+                  }}
                   className='inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                 >
                   Create Project
                 </button>
                 <button
                   type='button'
+                  onClick={() => {
+                    setType('task')
+                    setShow(true)
+                  }}
                   className='ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                 >
                   Add Task
@@ -47,14 +55,14 @@ function Dashboard({ session }) {
                 {/* Earnings */}
                 <EarningsCard />
                 {/* Tasks */}
-                <TaskCard />
+                <TaskCard handleModal={setShow} modalType={setType} />
                 {/* INVOICES */}
-                <InvoiceCard />
+                <InvoiceCard handleModal={setShow} modalType={setType} />
               </div>
               {/* Right Column */}
               <div className='col-span-1 md:col-span-2 lg:col-span-5'>
                 {/* Projects */}
-                <ProjectCard />
+                <ProjectCard handleModal={setShow} modalType={setType} />
                 {/* Activity */}
                 <ActivityCard />
               </div>
