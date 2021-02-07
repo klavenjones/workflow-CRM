@@ -289,6 +289,84 @@ function ProjectModal() {
   )
 }
 
+function ClientModal() {
+  return (
+    <>
+      <div>
+        {/* Modal Title */}
+        <div className='mx-auto flex items-center justify-center py-10 mb-10 border-b border-gray-200'>
+          <h1 className='text-2xl'>Add New Client</h1>
+        </div>
+
+        {/* Modal Form */}
+        <div className='mt-3 sm:mt-5 px-4 sm:p-6'>
+          <div className='mt-6'>
+            <label
+              htmlFor='name'
+              className='block text-gray-400 text-sm uppercase tracking-wider'
+            >
+              Client Name
+            </label>
+            <div className='mt-3'>
+              <input
+                type='text'
+                name='name'
+                id='name'
+                className='shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                placeholder='Jane Smith'
+              />
+            </div>
+          </div>
+          <div className='mt-6'>
+            <label
+              htmlFor='email'
+              className='block text-gray-400 text-sm uppercase tracking-wider'
+            >
+              Client Email
+            </label>
+            <div className='mt-3'>
+              <input
+                type='text'
+                name='email'
+                id='email'
+                className='shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                placeholder='you@example.com'
+              />
+            </div>
+          </div>
+
+          <div className='mt-6'>
+            <label
+              htmlFor='email'
+              className='block text-gray-400 text-sm uppercase tracking-wider'
+            >
+              Client Email
+            </label>
+            <div className='mt-3'>
+              <input
+                type='text'
+                name='email'
+                id='email'
+                className='shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
+                placeholder='you@example.com'
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className='mt-5 mx-auto flex items-center justify-center py-10 px-4 border-t border-gray-200 sm:mt-6 sm:p-4'>
+          <button
+            type='button'
+            className='inline-flex justify-center w-full rounded-sm border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base text-white tracking-widest uppercase hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm'
+          >
+            Add Client
+          </button>
+        </div>
+      </div>
+    </>
+  )
+}
+
 function TaskModal() {
   return (
     <>
@@ -466,6 +544,9 @@ function renderModalForm(type) {
       break
     case 'invoice':
       return <InvoiceModal />
+      break
+    case 'client':
+      return <ClientModal />
       break
   }
 }
